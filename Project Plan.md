@@ -154,9 +154,6 @@ Application must be compatible with major web browsers.
 
 ## 3. Activity Definition Estimation
 
-
-Define the activities required for your project based on the WBS, and assign responsibilities to team members. Each activity should be numbered and correspond with your Gantt chart. Provide estimated durations for each activity to facilitate Gantt chart preparation.
-
 | Activity #No | Activity Name | Brief Description | Duration | Responsible Team Members |
 |--------------|---------------|-------------------|----------|--------------------------|
 |Activity 1|  Define the project requirements | Document and clearly define the key objectives and requirement of the project | 1 day| All |
@@ -172,15 +169,21 @@ Define the activities required for your project based on the WBS, and assign res
 | Activity 11| Consider resource availability and risks |Assess resource availability and identify potential risks to ensure smooth project execution|1 day|All|
 | Activity 12|  Acquire project team| Select and assign the necessary team members for the project| 1 day |All|
 | Activity 13|  Assign tasks| Allocate specific tasks to team members| 1 day | All|
-| Activity 14|  Manage communications|Ensure effective information flow among project stakeholders by consistent communication|???|All|
-| Activity 15|Update project plan|Revise the project plan to reflect changes and ensure alignment with current objectives| 3 days|All|
-| Activity 16|Performance quality assurance|Monitor and evaluate project outputs to ensure they meet the required standards and performance criteria| 3 days|All|
-| Activity 17| Manage changes | Identify, evaluate and approve changes to the project; implement the changes and update the project plan | ???? | All |
-| Activity 18|Control the cost, timeframe of the project|Monitor and manage the budget and schedule by comparing project’s progress to the plan and making adjustments to ensure the project stays within its planned limits.| - days|All|
-| Activity 19|Control quality, scope and resources|Monitor and adjust project quality, scope, and resource use to ensure alignment with objectives and standards| ???|All|
-| Activity 20|   Monitor risks |Track and assess potential risks throughout the project to mitigate their impact|???|All|
-| Activity 21|Close project| Finalise all project activities, ensure all the requirements and deliverables are met, and conduct a final review | 3 days | All |
-| Activity 22|Close procurement|Finalise and complete all procurement activities, ensuring contracts and agreements are fulfilled and resolved |3 days|All|
+| Activity 14| User Interface Design|Creating the visual elements and layout of the software to ensure an engaging user experience| 1 day | All|
+| Activity 15| System Design| Developing the architecture and structure of the software, including components, interfaces, and data flow, to ensure it meets functional and performance requirements| 1 day | All|
+| Activity 16|  Development | Writing and integrating code to build the software, including implementing features, fixing bugs, and ensuring functionality according to specifications| 1 day | All|
+| Activity 17|  Testing | Evaluating the software to identify and fix defects, ensuring it meets requirements and performs as expected through various testing methods| 1 day | All|
+| Activity 18|Deployment |Releasing the software to the production environment| 1 day | All|
+| Activity 19|  Manage communications|Ensure effective information flow among project stakeholders by consistent communication|???|All|
+| Activity 20|Update project plan|Revise the project plan to reflect changes and ensure alignment with current objectives|???|All|
+| Activity 21|Performance quality assurance|Monitor and evaluate project outputs to ensure they meet the required standards and performance criteria| ???|All|
+| Activity 22| Manage changes | Identify, evaluate and approve changes to the project; implement the changes and update the project plan | ???? | All |
+| Activity 23|Control the cost, timeframe of the project|Monitor and manage the budget and schedule by comparing project’s progress to the plan and making adjustments to ensure the project stays within its planned limits.| - days|All|
+| Activity 24|Control quality, scope and resources|Monitor and adjust project quality, scope, and resource use to ensure alignment with objectives and standards| ???|All|
+| Activity 25|   Monitor risks |Track and assess potential risks throughout the project to mitigate their impact|???|All|
+| Activity 26|Close project| Finalise all project activities, ensure all the requirements and deliverables are met, and conduct a final review | 3 days | All |
+| Activity 27|Close procurement|Finalise and complete all procurement activities, ensuring contracts and agreements are fulfilled and resolved |3 days|All|
+
 
 
 
