@@ -152,12 +152,31 @@ Application must be compatible with major web browsers.
 
 Define the activities required for your project based on the WBS, and assign responsibilities to team members. Each activity should be numbered and correspond with your Gantt chart. Provide estimated durations for each activity to facilitate Gantt chart preparation.
 
-
 | Activity #No | Activity Name | Brief Description | Duration | Responsible Team Members |
 |--------------|---------------|-------------------|----------|--------------------------|
-| xxx          | xxx           | xxx               | xxx      | xxx \& yyy               |
-| xxxx         | xxx           | xxx               | xxx      | All                      |
-| xxxx         | xxx           | xxx               | xxx      | xxx                      |
+|Activity 1|  Define the project requirements | Document and clearly define the key objectives and requirement of the project | 1 day| All |
+|Activity 2| Identify and meet with stakeholders|Determine key stakeholders and arrange meetings to gather their input and align project goals|1 day | All???? |
+| Activity 3| Develop program charter|Create a document outlining the purpose, scope, objectives, stakeholders, tasks and activities, roles and responsibilities, budget, resources, risks and timeline of the project.| - day      | All |
+| Activity 4| Collect requirements | Gather detailed project needs and expectations from stakeholders including detailed features for the application|1 day| All |
+| Activity 5| Define scope | Document project scope statement, project deliverable, project acceptance criteria and exclusion| 1 day | All |
+| Activity 6| Create WBS | Break down the project to smaller and manageable tasks. Organise and plan the work | 1 day | All |
+| Activity 7| Define activities |Identify and specify the tasks and actions that need to be completed to achieve the project goal with details.| 1 day | All |
+| Activity 8| Sequence activities| Arrange project tasks in logical order for efficient execution| 1 day | All |
+| Activity 9| Estimate activities duration | Estimate the amount of required time to complete each activity in the project and ensure the deadlines are met | 1 day | All |
+| Activity 10| Identify and estimate resource requirements | Create a list of resources needed for the project, including human resource, equipment, software and tools, with estimated costs based on quantity, amount or time to be spent. Review the list and revise if needed | 3 days|All|
+| Activity 11| Consider resource availability and risks |Assess resource availability and identify potential risks to ensure smooth project execution|1 day|All|
+| Activity 12|  Acquire project team| Select and assign the necessary team members for the project| 1 day |All|
+| Activity 13|  Assign tasks| Allocate specific tasks to team members| 1 day | All|
+| Activity 14|  Manage communications|Ensure effective information flow among project stakeholders by consistent communication|???|All|
+| Activity 15|Update project plan|Revise the project plan to reflect changes and ensure alignment with current objectives| 3 days|All|
+| Activity 16|Performance quality assurance|Monitor and evaluate project outputs to ensure they meet the required standards and performance criteria| 3 days|All|
+| Activity 17| Manage changes | Identify, evaluate and approve changes to the project; implement the changes and update the project plan | ???? | All |
+| Activity 18|Control the cost, timeframe of the project|Monitor and manage the budget and schedule by comparing project’s progress to the plan and making adjustments to ensure the project stays within its planned limits.| - days|All|
+| Activity 19|Control quality, scope and resources|Monitor and adjust project quality, scope, and resource use to ensure alignment with objectives and standards| ???|All|
+| Activity 20|   Monitor risks |Track and assess potential risks throughout the project to mitigate their impact|???|All|
+| Activity 21|Close project| Finalise all project activities, ensure all the requirements and deliverables are met, and conduct a final review | 3 days | All |
+| Activity 22|Close procurement|Finalise and complete all procurement activities, ensuring contracts and agreements are fulfilled and resolved |3 days|All|
+
 
 
 ## 4. Gantt Chart
