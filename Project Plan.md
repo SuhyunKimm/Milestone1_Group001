@@ -129,6 +129,11 @@ Application must be compatible with major web browsers.
 	- Executing
 		- Acquire project team 
 		- Assign tasks
+		- User Interface Design
+		- System Design
+		- Development/Coding
+		- Testing
+		- Deployment
 		- Manage communications
 		- Update project plan
 	- Controlling
