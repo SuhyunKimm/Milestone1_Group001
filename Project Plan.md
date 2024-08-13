@@ -142,8 +142,6 @@ Application must be compatible with major web browsers.
 		- Close procurement
 
 
-
-
 ![WBS](./WBS.png)
 
 
