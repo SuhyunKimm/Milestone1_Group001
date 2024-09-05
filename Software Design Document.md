@@ -448,14 +448,14 @@ The application includes 6 screens: 1 landing screen, shown to the users when th
 
 Example: 
 Landing Screen
-![Landing Screen Design](./Landing screen.png)
+![Landing Screen Design](./Landing_screen.png)
 Food Search Screen
-![Function 1 Screen Design](./Food Search screen.png)
+![Function 1 Screen Design](./Food Search_screen.png)
 Nutrition Breakdown Screen
-![Function 2 Screen Design](./Nutrition Breakdown screen.png)
+![Function 2 Screen Design](./Nutrition_Breakdown_screen.png)
 Nutrition Range Filter Screen
-![Function 3 Screen Design](./Range Filter screen.png)
+![Function 3 Screen Design](./Range_Filter_screen.png)
 Nutrition Level Filter Screen
-![Function 4 Screen Design](./Level Filter screen.png)
+![Function 4 Screen Design](./Level_Filter_screen.png)
 Nutrition Tracker Screen
-![Function 5 Screen Design](./Nutrition Tracker screen.png)
+![Function 5 Screen Design](./Nutrition_Tracker_screen.png)
