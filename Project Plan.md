@@ -140,7 +140,7 @@ Application must be compatible with major web browsers.
 
 
 
-![WBS](./WBS.jpg)
+![WBS](./WBS.png)
 
 
 
