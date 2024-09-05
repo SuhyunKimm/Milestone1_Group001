@@ -469,47 +469,27 @@ def updateDailyIntake(nutrient_value, intake_nutrient) :<br/>
 
 
 
-
-The software system is organized into the following main components:
-1.Main Dashboard
-Purpose: Central hub from which users can access all system features.
+The software system is organized into the following main components: <br>
+1. Main Dashboard
+- Purpose: Central hub from which users can access all system features.
 Sub-components:
-Navigation Menu (for quick access to different functionalities)
+- Navigation Menu (for quick access to different functionalities)
 2. Food Search Function
-Purpose: Allows users to search for specific food items and view detailed nutritional information.
-Sub-components:
-Search Input Field
-Results Display
-Food Details Panel (with nutritional information)
-Error Handling (e.g., “No food found” message)
+- Purpose: Allows users to search for specific food items and view detailed nutritional information.
+- Sub-components:Search Input Field , Results Display , Food Details Panel (with nutritional information), Error Handling (e.g., “No food found” message)
 3. Nutritional breakdown
-Purpose: Provides a visual representation of the nutrient content of selected food items.
-Sub-components:
-Food Selection Panel
-Visualization Options (Pie Chart, Bar Chart)
-Visualization Display (charts showing nutrient breakdown)
-Error Handling (e.g., “Food not recognized” message)
+- Purpose: Provides a visual representation of the nutrient content of selected food items.
+- Sub-components: Food Selection Panel, Visualization Options (Pie Chart, Bar Chart), Visualization Display (charts showing nutrient breakdown), Error Handling (e.g., “Food not recognized” message)
 4. Nutrition range filter
-Purpose:  Allows users to filter foods based on a specific range of nutritional values.
-Sub-components:
-Nutrition Selection Panel
-Range Input Fields (Min and Max values)
-Filtered Results Display
+- Purpose:  Allows users to filter foods based on a specific range of nutritional values.
+- Sub-components: Nutrition Selection Panel ,Range Input Fields (Min and Max values), Filtered Results Display
 Error Handling (e.g., “No food meets the requirements” message)
 5. Nutrition level filter
-Purpose: Filters foods based on specific nutritional levels (e.g., high protein, low fat).
-Sub-components:
-Criteria Selection (from drop-down menu)
-Filtered Results Display
-Error Handling (e.g., “No food matches the criteria” message).
+- Purpose: Filters foods based on specific nutritional levels (e.g., high protein, low fat).
+- Sub-components: Criteria Selection (from drop-down menu), Filtered Results Display ,Error Handling (e.g., “No food matches the criteria” message).
 6. Nutrition tracker module
-Purpose: Tracks user’s daily intake of specific nutrients and visualizes the progress.
-Sub-components:
-Nutrient Selection Panel
-Intake Input Field
-Tracked Foods Display
-Visualization Display (Pie Chart showing intake progress)
-Error Handling (e.g., “Over the recommended intake” message)
+- Purpose: Tracks user’s daily intake of specific nutrients and visualizes the progress.
+- Sub-components:Nutrient Selection Panel , Intake Input Field , Tracked Foods Display , Visualization Display (Pie Chart showing intake progress), Error Handling (e.g., “Over the recommended intake” message)
 
 
 
