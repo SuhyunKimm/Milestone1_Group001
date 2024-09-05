@@ -248,8 +248,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Description    | The user selects one food item by entering the food name in a text field and the system generates and displays pie charts and bar charts that illustrate the nutrient content of the selected food items.|
 | Flow of Events | 1. The user selects one food item by entering the food name in the text field.<br/>2. The system retrieves the nutrient content data for the selected food items.<br/>3. The system generates a pie chart showing the percentage distribution of various nutrients in the selected food.<br/>4. The system generates a bar chart showing the quantity of specific nutrients in the selected food.<br/>5. The system displays the pie chart and bar chart to the user |
 | Alternate Flow | AF1: If the user selects a food item not recognized by the system, an error message is displayed, and the user is prompted to select another item.
-AF2: If the user does not make a selection and tries to proceed, the system prompts the user to select at least one food item.
-|
+AF2: If the user does not make a selection and tries to proceed, the system prompts the user to select at least one food item. |
 
 
 
