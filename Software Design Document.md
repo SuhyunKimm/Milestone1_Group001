@@ -401,12 +401,12 @@ Functions: display chart
 
 
 
-def searchFood(food_name, data) :
- matching_row <- data[data.food is food_name]
- if matching_row is empty
-   then return False
- else
-   return matching_row
+def searchFood(food_name, data) :<br/>
+> matching_row <- data[data.food is food_name]
+> if matching_row is empty
+>>then return False
+>else
+>>return matching_row
 
 
 
