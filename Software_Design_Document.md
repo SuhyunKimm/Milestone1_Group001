@@ -320,7 +320,7 @@ Include a flowchart that illustrates how your software will operate.
 
 
 
-Example:
+
 ![Software Design](./Flowchart.png)
 
 
