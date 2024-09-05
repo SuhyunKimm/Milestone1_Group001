@@ -367,6 +367,7 @@ Example:
 
 
 
+
 #### 3.2.2 Data Structures / Data Sources
 1. List
 - Usage: store the nutrient names, nutrient values or food names for displaying the list to the users
@@ -383,6 +384,7 @@ Example:
 5. Int
 - Usage: store the type of graph as an integer (e.g., pie = 1, bar = 2) and used for visualization
 - Functions: display chart
+
 
 
 
