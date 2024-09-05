@@ -208,13 +208,13 @@ Search functionality: <br/>users need to search for food items by name or catego
 
 
 - R4.1: The program will accept the user’s filter input as text(e.g. high protein, low fat, low sodium).
--R4.2: The program will refine the list of food items displayed based on the user's specific criteria.
+- R4.2: The program will refine the list of food items displayed based on the user's specific criteria.
 
 
 
 
--R5.1: The program will accept user’s input for recommended daily intake values for a specific nutrition (eg: sugar, protein, sodium).
--R5.2: The program will display the percentage of the nutrient consumed relative to the user’s target intake in a pie chart.
+- R5.1: The program will accept user’s input for recommended daily intake values for a specific nutrition (eg: sugar, protein, sodium).
+- R5.2: The program will display the percentage of the nutrient consumed relative to the user’s target intake in a pie chart.
 
 
 
