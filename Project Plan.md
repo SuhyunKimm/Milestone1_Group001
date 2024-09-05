@@ -1,7 +1,7 @@
 # Project Plan
 
 
-## Project Name: XXXX
+## Project Name: Nutrition analysis and tracking app
 ## Group Number: 001
 
 
@@ -60,7 +60,7 @@ Please Describe what you have accomplished in this group project.
 
 
 ### 1.1 Project Objectives
- Project name: Food nutrition tracking app
+
 
 The objective of this project is to develop a user-friendly software application that enables users to efficiently browse and retrieve nutritional information from a comprehensive food database. The program will provide key features such as searching for foods by name and displaying detailed nutritional data, including calories, macronutrients, vitamins, and minerals. Success will be measured by the program’s accuracy in delivering nutritional information, ease of use, and user satisfaction with the search functionality.
 
@@ -69,20 +69,13 @@ The objective of this project is to develop a user-friendly software application
 
 
 Internal:
-
-* Programmers : Develop the program with a focus on ensuring it performs all required functions effectively while providing a user-friendly graphical user interface (GUI). Their role includes implementing features such as food search, nutritional information display, and data visualisation, ensuring the system is intuitive and responsive.
-
-* Data Analyst :  Analyse nutritional data and deliver insights as requested by users or the system. They are responsible for generating visualisations that effectively communicate nutritional information, enabling users to easily interpret and make decisions based on the data provided.
-
-* Marketing team : promote the application, creating awareness and develop marketing strategies, gather user feedback to inform future enhancements.
-
-* Company’s management team : Set up the project management plan and keep track of the process, allocate budget and resources, set project priorities, review progress reports, and make key decisions to ensure project alignment with company goals. 
-
+Programmers : Develop the program with a focus on ensuring it performs all required functions effectively while providing a user-friendly graphical user interface (GUI). Their role includes implementing features such as food search, nutritional information display, and data visualisation, ensuring the system is intuitive and responsive.
+Data Analyst :  Analyse nutritional data and deliver insights as requested by users or the system. They are responsible for generating visualisations that effectively communicate nutritional information, enabling users to easily interpret and make decisions based on the data provided.
+Marketing team : promote the application, creating awareness and develop marketing strategies, gather user feedback to inform future enhancements
+Company’s management team : Set up the project management plan and keep track of the process, allocate budget and resources, set project priorities, review progress reports, and make key decisions to ensure project alignment with company goals. 
 External:
-
-* Potential end-users: Individuals who will use the program to search and retrieve nutritional information, provide feedback on the application’s usability and functionality, report any issues, and suggest improvements.
-
-* Client company executives: define project requirements, provide feedback during development, review project milestones, and ensure the application meets their business needs and expectations.
+Potential end-users: Individuals who will use the program to search and retrieve nutritional information, provide feedback on the application’s usability and functionality, report any issues, and suggest improvements.
+Client company executives: define project requirements, provide feedback during development, review project milestones, and ensure the application meets their business needs and expectations.
 
 
 
@@ -91,15 +84,13 @@ External:
 
 
 Project scope statement: The scope of this project includes the development, testing, and deployment of a software application that allows users to browse nutritional data of foods from a nutritional food database. 
-
 Project deliverable:
 This project will allow users to do these functions: search food by name and display nutritional information integration of detailed nutritional data, including calories, macronutrients (proteins, fats, carbohydrates), vitamins, and minerals.
-
 Project acceptance criteria:
-* User Centred Design theory applied to ensure the high usability of the application.
-* The application meets the performance requirements of response time, and provides stable performance.
-* ###Users' credentials and personal information are encrypted and not stored in plain text.]
-* The application is able to be updated over-the-air with new databases.
+User Centred Design theory applied to ensure the high usability of the application.
+The application meets the performance requirements of response time, and provides stable performance.
+###Users' credentials and personal information are encrypted and not stored in plain text.]
+The application is able to be updated over-the-air with new databases.
 
 
 
@@ -147,12 +138,18 @@ Application must be compatible with major web browsers.
 		- Close procurement
 
 
-![WBS](./WBS.png)
+
+
+![WBS](./WBS.jpg)
 
 
 
 
 ## 3. Activity Definition Estimation
+
+
+Define the activities required for your project based on the WBS, and assign responsibilities to team members. Each activity should be numbered and correspond with your Gantt chart. Provide estimated durations for each activity to facilitate Gantt chart preparation. Total of 60 days
+
 
 | Activity #No | Activity Name | Brief Description | Duration | Responsible Team Members |
 |--------------|---------------|-------------------|----------|--------------------------|
@@ -183,10 +180,6 @@ Application must be compatible with major web browsers.
 | Activity 25|   Monitor risks |Track and assess potential risks throughout the project to mitigate their impact|???|All|
 | Activity 26|Close project| Finalise all project activities, ensure all the requirements and deliverables are met, and conduct a final review | 3 days | All |
 | Activity 27|Close procurement|Finalise and complete all procurement activities, ensuring contracts and agreements are fulfilled and resolved |3 days|All|
-
-
-
-
 ## 4. Gantt Chart
 You have to use the provided Gantt chart template. 
 
@@ -194,9 +187,4 @@ You have to use the provided Gantt chart template.
 Use the provided Gantt chart template to list all items from the Activity Definition along with relevant estimates
 and scheduling. Ensure that the Gantt chart reflects the activity definitions from Section 3. Track actual start
 times and durations. Besides including Gantt chart here, you should also submit your Gantt chart file separately.
-![Gantt Chart](./Gantt_chart-V1.png)
-
-
-
-
-
+![Gantt Chart](./Gantt_chart.png)
