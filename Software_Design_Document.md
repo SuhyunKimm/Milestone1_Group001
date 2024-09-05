@@ -131,13 +131,14 @@ Researcher: individuals who study nutrition, food science, or health-related fie
 
 
 
-- System Functionality: System will accept user inputs, such as the name of the food or a specified range of nutritional data, and retrieve the results with a visual representation of the information.
-- Features and Functionalities:
-Food Search: Allow users to search for food using a search bar, display results and nutritional information for individual food.
-Nutrition Breakdown: Allow users to view and choose food from a list, and graphically demonstrate the nutrient breakdown using pie charts and bar graphs.
-Nutrition Range Filter: Allow users to select a range of nutritional value, and provide a list of food that has the nutritional value within the range.
-Nutrition Level Filter: For example, if the highest amount of fat among all foods is 30 grams, then foods with less than 10 grams of fat would be considered "low" in fat content. The system will convert all the food content into high, mid or low in nutrient content (eg: coffee high in sugar, low in calories, mid in carb, etc), system then allow user to filter food base on nutritional content level (eg user filter food which low in sugar, low in calories and low in carbs).
-Nutrition Tracker: Allow users to select foods and check how much a specific nutrient contributes based on the quantity they input and display it via pie charts. For example: if a user wants to track their daily sugar intake, they can input their recommended amount (e.g., 100g) and select foods. The system will display the sugar content of the selected food (e.g., 24g from coffee) as a percentage of the recommended intake, shown in a pie chart (e.g., 24g out of 100g).
+System Functionality: <br/>
+- System will accept user inputs, such as the name of the food or a specified range of nutritional data, and retrieve the results with a visual representation of the information.
+Features and Functionalities:<br/>
+- Food Search: Allow users to search for food using a search bar, display results and nutritional information for individual food.
+- Nutrition Breakdown: Allow users to view and choose food from a list, and graphically demonstrate the nutrient breakdown using pie charts and bar graphs.
+- Nutrition Range Filter: Allow users to select a range of nutritional value, and provide a list of food that has the nutritional value within the range.
+- Nutrition Level Filter: For example, if the highest amount of fat among all foods is 30 grams, then foods with less than 10 grams of fat would be considered "low" in fat content. The system will convert all the food content into high, mid or low in nutrient content (eg: coffee high in sugar, low in calories, mid in carb, etc), system then allow user to filter food base on nutritional content level (eg user filter food which low in sugar, low in calories and low in carbs).
+- Nutrition Tracker: Allow users to select foods and check how much a specific nutrient contributes based on the quantity they input and display it via pie charts. For example: if a user wants to track their daily sugar intake, they can input their recommended amount (e.g., 100g) and select foods. The system will display the sugar content of the selected food (e.g., 24g from coffee) as a percentage of the recommended intake, shown in a pie chart (e.g., 24g out of 100g).
 
 
 
@@ -148,10 +149,10 @@ Nutrition Tracker: Allow users to select foods and check how much a specific nut
 
 
 How will this system provide value or benefit?
-Better Health Decisions: Users can access detailed nutritional information to optimize their diet and achieve health goals, such as weight loss or improved fitness.
-Personalized nutrition:  The system helps users filter foods by nutritional criteria, supporting specific diets (e.g., low-carb, gluten-free).
-Time efficiency: the system simplifies the search for nutritional data, saving users time on meal planning.
-Data insight: Visualization tools help users quickly compare and analyze nutritional information for better decision-making.
+- Better Health Decisions: Users can access detailed nutritional information to optimize their diet and achieve health goals, such as weight loss or improved fitness.
+- Personalized nutrition:  The system helps users filter foods by nutritional criteria, supporting specific diets (e.g., low-carb, gluten-free).
+- Time efficiency: the system simplifies the search for nutritional data, saving users time on meal planning.
+- Data insight: Visualization tools help users quickly compare and analyze nutritional information for better decision-making.
 
 
 
@@ -170,9 +171,9 @@ Data insight: Visualization tools help users quickly compare and analyze nutriti
 
 
 
-An user who follows a personalized meal plan to support his goal of building muscle while maintaining a balanced diet. He uses the system to find foods that meet his daily macronutrient goals, track his calorie intake, and ensure his meals are nutritionally sound. Customer first logs into the system where there is search functionality allowing the user to search for a specific food (eg: chicken breast, etc). Upon searching, the user sees detailed nutritional information, including calories, protein, fat, carbohydrates, and vitamins. He can filter these results based on his dietary needs, such as "high protein" or "low carb," and visualize the nutritional data in an easy-to-read format, helping him compare options. When a user selects food items, the system stores them in his daily log, allowing him to track his intake over time. The data visualization tools also help him monitor his progress towards meeting his macronutrient goals for the day.
-Functionality user must provide:
-Search functionality: users need to search for food items by name or category, the system must display detailed nutritional information, including macronutrients and vitamins, in a readable format.
+An user who follows a personalized meal plan to support his goal of building muscle while maintaining a balanced diet. He uses the system to find foods that meet his daily macronutrient goals, track his calorie intake, and ensure his meals are nutritionally sound. Customer first logs into the system where there is search functionality allowing the user to search for a specific food (eg: chicken breast, etc). Upon searching, the user sees detailed nutritional information, including calories, protein, fat, carbohydrates, and vitamins. He can filter these results based on his dietary needs, such as "high protein" or "low carb," and visualize the nutritional data in an easy-to-read format, helping him compare options. When a user selects food items, the system stores them in his daily log, allowing him to track his intake over time. The data visualization tools also help him monitor his progress towards meeting his macronutrient goals for the day.<br/><br/>
+Functionality user must provide:<br/>
+Search functionality: <br/>users need to search for food items by name or category, the system must display detailed nutritional information, including macronutrients and vitamins, in a readable format.
 
 
 
@@ -508,7 +509,14 @@ Error Handling (e.g., “No food meets the requirements” message)
 
 
 ### 4.2 Visual Design
-The application includes 6 screens: 1 landing screen, shown to the users when they first open the app, and 5 other screens for 5 different functions. The interfaces were designed using the User Centred Design (UCD) method to maximise the usability of the application. Comprehensive buttons and layouts have been used to make it easier for users to interact with the system. All the screens (except the landing screen) include a “Back” button on the top-left corner to let users navigate to the landing screen (menu). The system also uses “Search” buttons and value sliders, which are user-friendly conventions. The text fonts and sizes are also considered to maintain the visibility of all the system components. This design also includes colours. These colours follow a consistent palette to ensure the theme colour of a healthy food app.
+The application includes 6 screens:<br/>
+1 landing screen, shown to the users when they first open the app, and 5 other screens for 5 different functions.<br/>
+The interfaces were designed using the User Centred Design (UCD) method to maximise the usability of the application.<br/>
+Comprehensive buttons and layouts have been used to make it easier for users to interact with the system. <br/>
+All the screens (except the landing screen) include a “Back” button on the top-left corner to let users navigate to the landing screen (menu).<br/> 
+The system also uses “Search” buttons and value sliders, which are user-friendly conventions.<br/>
+The text fonts and sizes are also considered to maintain the visibility of all the system components.<br/>
+This design also includes colours. These colours follow a consistent palette to ensure the theme colour of a healthy food app.
 
 
 
