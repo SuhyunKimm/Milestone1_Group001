@@ -326,51 +326,43 @@ Example:
 
 
 #### 3.2.1 Functions
-List all key functions within the software. For each function, provide:
-- Description: Brief explanation of the function’s purpose.
-- Input Parameters: List parameters, their data types, and their use.
-- Return Value: Describe what the function returns.
-- Side Effects: Note any side effects, such as changes to global variables or data passed by reference.
 
+1. Search Food
+- Description :This function takes the name of the food as string as an input and the data. It searches the row that has a matching food name and returns the row. If nothing is found, it returns False.
+- Input Parameters : food_name(str), data(dataFrame)
+- Return Value : the row of the matching food
+- Side Effects : No side effects
+2. getNutrientInfo
+- Description : This function takes dataFrame type of data (one row) and separates the nutrients name and nutrients value into the lists.
+- Input parameters : data(dataFrame)
+- Return Value : nutrients_name(list), nutrients_values(list)
+- Side Effects : No side effects
+3. displayChart
+- Description :This function takes the value input and displays the chart based on the user's input (1 for pie chart, 2 for bar chart). If the amount of nutrients is less than 5%, they are combined into the ‘others’ category.
+- Input parameters : graphOption(int), data(dataFrame)
+- Return Value : Return nothing
+- Side Effects : No side effects
+4. rangeFilterFood
+- Description: This function takes the name of the nutrient, min and max value of the nutrition as inputs. It then searches for the food name and returns a list of food names, and name of the nutrient selected with its value that matches the range. If nothing is found, it returns False.
+- Input parameters: nutrient(str), min_value(float), max_value(float), data(dataFrame)
+- Return Value : the set of rows of the filtered food (dataFrame type)
+- Side Effects : No side effects
+5. displayList
+- Description : This function takes in rows of filtered food as inputs, it then makes a list of food names.
+- Input parameters : data(dataFrame)
+- Return Value : Return nothing
+- Side Effects : No side effects
+6. levelFilterFood
+- Description: This function takes in the nutrition name and its level as a string (e.g., ‘Low’, ‘Mid’, or ‘High’). It then sorts those values in ascending order.
+- Input parameters : level(str), nutrient(str), data(dataFrame)
+- Return Value: the set of rows of the filtered food (dataFrame type)
+- Side Effects: No side effects
+7. updateDailyIntake
+- Description: This function takes in the nutrient value and updates then returns the updated nutrient value.
+- Input Parameter : nutrient_value(float), intake_nutrient(float)
+- Return Values: updated_nutrient_value(float)
+- Side Effects: No side effects
 
-
-
-searchFood
-Description : This function takes the name of the food as string as an input and the data. It searches the row that has a matching food name and returns the row. If nothing is found, it returns False.
-Input Parameters : food_name(str), data(dataFrame)
-Return Value : the row of the matching food
-Side Effects : No side effects
-getNutrientInfo
-Description : This function takes dataFrame type of data (one row) and separates the nutrients name and nutrients value into the lists.
-Input parameters : data(dataFrame)
-Return Value : nutrients_name(list), nutrients_values(list)
-Side Effects : No side effects
-displayChart
-Description :This function takes the value input and displays the chart based on the user's input (1 for pie chart, 2 for bar chart).
-If the amount of nutrients is less than 5%, they are combined into the ‘others’ category.
-Input parameters : graphOption(int), data(dataFrame)
-Return Value : Return nothing
-Side Effects : No side effects
-rangeFilterFood
-Description: This function takes the name of the nutrient, min and max value of the nutrition as inputs. It then searches for the food name and returns a list of food names, and name of the nutrient selected with its value that matches the range.  If nothing is found, it returns False.
-Input parameters: nutrient(str), min_value(float), max_value(float), data(dataFrame)
-Return Value : the set of rows of the filtered food (dataFrame type)
-Side Effects : No side effects
-displayList
-Description : This function takes in rows of filtered food as inputs, it then makes a list of food names.
-Input parameters : data(dataFrame)
-Return Value : Return nothing
-Side Effects : No side effects
-levelFilterFood
-Description: This function takes in the nutrition name and its level as a string (e.g., ‘Low’, ‘Mid’, or ‘High’). It then sorts those values in ascending order.
-Input parameters : level(str), nutrient(str), data(dataFrame)
-Return Value: the set of rows of the filtered food (dataFrame type)
-Side Effects: No side effects
-updateDailyIntake
-Description: This function takes in the nutrient value and updates then returns the updated nutrient value.
-Input Parameter : nutrient_value(float), intake_nutrient(float)
-Return Values: updated_nutrient_value(float)
-Side Effects: No side effects
 
 
 
@@ -404,66 +396,66 @@ Functions: display chart
 def searchFood(food_name, data) :<br/>
 > matching_row <- data[data.food is food_name]
 > if matching_row is empty
->>then return False
->else
->>return matching_row
+>> then return False
+> else
+>> return matching_row
 
 
 
 
-def getNutrientInfo(data) :
-nutrients_name <- list(foodname.columns)
-nutrients_value <- foodname.values[0]
- return nutrients_name, nutrients_value
+def getNutrientInfo(data) :<br/>
+> nutrients_name <- list(foodname.columns)
+> nutrients_value <- foodname.values[0]
+> return nutrients_name, nutrients_value
 
 
 
 
-def displayChart(graphOption, data) :
- group nutrients with amounts less than 5% into an 'Others' category
- if graphOption is pie :
-   then create pie chart
- else if graphOptions is bar :
-   then create bar char
+def displayChart(graphOption, data) :<br/>
+> group nutrients with amounts less than 5% into an 'Others' category
+> if graphOption is pie :
+>> then create pie chart
+> else if graphOptions is bar :
+>> then create bar char
 
 
 
 
-def rangeFilterFood(nutrient, min_value, max_value, data) :
- filtered_row <- data[data.nutrient >= min_value and data.nutrient<=max_value]
- if filtered_row is empty :
-   then return False
- else :
-   then return filtered_row
+def rangeFilterFood(nutrient, min_value, max_value, data) :<br/>
+> filtered_row <- data[data.nutrient >= min_value and data.nutrient<=max_value]
+> if filtered_row is empty :
+>> then return False
+> else :
+>> then return filtered_row
 
 
 
 
-def displayList(data) :
- separate data into food names and its nutrition data
- display these two lists
+def displayList(data) :<br/>
+> separate data into food names and its nutrition data
+> display these two lists
 
 
 
 
-def levelFilterFood(level, nutrient, data) :
- sorted_data = data.sort(by nutrient with ascending order)
- highest_val_of_low <- sorted_data[data.length * 0.33]
- highest_val_of_mid <- sorted_data[data.length * 0.66]
- pct_75 = data.length * 0.75
- if level is Low :
-   then return sorted_data[sorted_data.nutrient<highest_val_of_low]
- else if level is Mid :
-   then return sorted_data[sorted_data.nutrient>=highest_val_of_low and    sorted_data.nutrient<highest_val_of_mid]
- else if level is High :
-   then return sorted_data[sorted_data.nutrient>highest_val_of_mid]
+def levelFilterFood(level, nutrient, data) :<br/>
+> sorted_data = data.sort(by nutrient with ascending order)
+> highest_val_of_low <- sorted_data[data.length * 0.33]
+> highest_val_of_mid <- sorted_data[data.length * 0.66]
+> pct_75 = data.length * 0.75
+> if level is Low :
+>> then return sorted_data[sorted_data.nutrient<highest_val_of_low]
+> else if level is Mid :
+>> then return sorted_data[sorted_data.nutrient>=highest_val_of_low and    sorted_data.nutrient<highest_val_of_mid]
+> else if level is High :
+>> then return sorted_data[sorted_data.nutrient>highest_val_of_mid]
 
 
 
 
-def updateDailyIntake(nutrient_value, intake_nutrient) :
- updated_nutrient_value = nutrient_value + intake_nutrient
- return updated_nutrient_value
+def updateDailyIntake(nutrient_value, intake_nutrient) :<br/>
+> updated_nutrient_value = nutrient_value + intake_nutrient
+> return updated_nutrient_value
 
 
 
@@ -472,7 +464,6 @@ def updateDailyIntake(nutrient_value, intake_nutrient) :
 
 
 
-.
 ## 4. User Interface Design
 ### 4.1 Structural Design
 
