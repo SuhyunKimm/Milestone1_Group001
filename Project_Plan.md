@@ -106,12 +106,12 @@ The objective of this project is to develop a user-friendly software application
 
 
 
-Internal:
+Internal:<br/>
 Programmers : Develop the program with a focus on ensuring it performs all required functions effectively while providing a user-friendly graphical user interface (GUI). Their role includes implementing features such as food search, nutritional information display, and data visualisation, ensuring the system is intuitive and responsive.
 Data Analyst :  Analyse nutritional data and deliver insights as requested by users or the system. They are responsible for generating visualisations that effectively communicate nutritional information, enabling users to easily interpret and make decisions based on the data provided.
 Marketing team : promote the application, creating awareness and develop marketing strategies, gather user feedback to inform future enhancements
 Company’s management team : Set up the project management plan and keep track of the process, allocate budget and resources, set project priorities, review progress reports, and make key decisions to ensure project alignment with company goals.
-External:
+External:<br/>
 Potential end-users: Individuals who will use the program to search and retrieve nutritional information, provide feedback on the application’s usability and functionality, report any issues, and suggest improvements.
 Client company executives: define project requirements, provide feedback during development, review project milestones, and ensure the application meets their business needs and expectations.
 
