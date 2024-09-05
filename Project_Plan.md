@@ -128,11 +128,11 @@ External:<br/>
 
 
 
-Project scope statement: The scope of this project includes the development, testing, and deployment of a software application that allows users to browse nutritional data of foods from a nutritional food database.
-Project deliverable:
+- Project scope statement: The scope of this project includes the development, testing, and deployment of a software application that allows users to browse nutritional data of foods from a nutritional food database.
+- Project deliverable:
 This project will allow users to do these functions: search food by name and display nutritional information integration of detailed nutritional data, including calories, macronutrients (proteins, fats, carbohydrates), vitamins, and minerals.
-Project acceptance criteria:
-User Centred Design theory applied to ensure the high usability of the application.
+- Project acceptance criteria:
+User Centred Design theory applied to ensure the high usability of the application.<br/>
 The application meets the performance requirements of response time, and provides stable performance.
 ###Users' credentials and personal information are encrypted and not stored in plain text.]
 The application is able to be updated over-the-air with new databases.
