@@ -247,8 +247,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Actors         | Users |
 | Description    | The user selects one food item by entering the food name in a text field and the system generates and displays pie charts and bar charts that illustrate the nutrient content of the selected food items.|
 | Flow of Events | 1. The user selects one food item by entering the food name in the text field.<br/>2. The system retrieves the nutrient content data for the selected food items.<br/>3. The system generates a pie chart showing the percentage distribution of various nutrients in the selected food.<br/>4. The system generates a bar chart showing the quantity of specific nutrients in the selected food.<br/>5. The system displays the pie chart and bar chart to the user |
-| Alternate Flow | AF1: If the user selects a food item not recognized by the system, an error message is displayed, and the user is prompted to select another item.
-AF2: If the user does not make a selection and tries to proceed, the system prompts the user to select at least one food item. |
+| Alternate Flow | 1. If the user selects a food item not recognized by the system, an error message is displayed, and the user is prompted to select another item.<br/>2. If the user does not make a selection and tries to proceed, the system prompts the user to select at least one food item. |
 
 
 
@@ -270,8 +269,7 @@ AF2: If the user does not make a selection and tries to proceed, the system prom
 | Actors         | Users |
 | Description    |The user chooses specific dietary criteria from the drop down box(e.g., "high protein," "low fat," "low sodium"). The system refines the displayed list of food items based on the user's filter input, showing only those items that meet the specified criteria.|
 | Flow of Events | 1.The system displays a list of dietary criteria (e.g., "high protein," "low fat").<br/>2. The user chooses the desired criteria from the drop down box.<br/>3. The system processes the input and applies the specified filters to the list of food items.<br/>4. The system refines the list of food items to include only those that match the user's criteria.<br/>5. The system displays the refined list of food items to the user.|
-| Alternate Flow |
-AF1: If no food items meet the specified criteria, the system informs the user and provides options to adjust the filter or clear the filter.|
+| Alternate Flow | If no food items meet the specified criteria, the system informs the user and provides options to adjust the filter or clear the filter.|
 
 
 
@@ -282,8 +280,7 @@ AF1: If no food items meet the specified criteria, the system informs the user a
 | Actors         | Users |
 | Description    | The user tracks total consumption of specific nutrients by selecting nutrients to monitor and adding the food items to a tracking list. |
 | Flow of Events | 1. The user selects a nutrient from the dropdown menu.<br/>2. The user enters the daily intake amount for the selected nutrient.<br/>3. The user searches for a food item using the text field.<br/>4. The system finds and matches food items based on the entered text.<br/>5. If found, the system displays the food item with a ‘Select’ checkbox option.<br/>6. The user checks the box to select the food item, adding it to the tracking list.<br/>7. The system updates the total nutrient amount based on the selected food items.<br/>8. The system displays a pie chart showing the percentage of each nutrient consumed relative to the daily intake amount. |
-| Alternate Flow | - If no matching food is found, the system displays the message ‘No food found’.
-- If the total nutrient amount exceeds the daily intake, the system shows a message indicating ‘Over the recommended intake’.|
+| Alternate Flow | 1. If no matching food is found, the system displays the message ‘No food found’.<br/>2. If the total nutrient amount exceeds the daily intake, the system shows a message indicating ‘Over the recommended intake’.|
 
 
 
