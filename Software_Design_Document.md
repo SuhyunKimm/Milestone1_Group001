@@ -171,7 +171,13 @@ How will this system provide value or benefit?
 
 
 
-An user who follows a personalized meal plan to support his goal of building muscle while maintaining a balanced diet. He uses the system to find foods that meet his daily macronutrient goals, track his calorie intake, and ensure his meals are nutritionally sound. Customer first logs into the system where there is search functionality allowing the user to search for a specific food (eg: chicken breast, etc). Upon searching, the user sees detailed nutritional information, including calories, protein, fat, carbohydrates, and vitamins. He can filter these results based on his dietary needs, such as "high protein" or "low carb," and visualize the nutritional data in an easy-to-read format, helping him compare options. When a user selects food items, the system stores them in his daily log, allowing him to track his intake over time. The data visualization tools also help him monitor his progress towards meeting his macronutrient goals for the day.<br/><br/>
+An user who follows a personalized meal plan to support his goal of building muscle while maintaining a balanced diet.<br/>
+He uses the system to find foods that meet his daily macronutrient goals, track his calorie intake, and ensure his meals are nutritionally sound.<br/>
+Customer first logs into the system where there is search functionality allowing the user to search for a specific food (eg: chicken breast, etc). <br/>
+Upon searching, the user sees detailed nutritional information, including calories, protein, fat, carbohydrates, and vitamins. <br/>
+He can filter these results based on his dietary needs, such as "high protein" or "low carb," and visualize the nutritional data in an easy-to-read format, helping him compare options.<br/>
+When a user selects food items, the system stores them in his daily log, allowing him to track his intake over time. <br/>
+The data visualization tools also help him monitor his progress towards meeting his macronutrient goals for the day.<br/><br/>
 Functionality user must provide:<br/>
 Search functionality: <br/>users need to search for food items by name or category, the system must display detailed nutritional information, including macronutrients and vitamins, in a readable format.
 
