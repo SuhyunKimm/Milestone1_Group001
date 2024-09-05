@@ -225,7 +225,6 @@ Provide a system-level Use Case Diagram illustrating all required features.
 
 
 
-Example:
 ![Use Case Diagram](./UseCase.png)
 
 
