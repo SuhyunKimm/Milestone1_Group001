@@ -268,7 +268,7 @@ Include at least 5 use cases, each corresponding to a specific function.
 | Use Case Name  | Nutrition Level Filter|
 | Actors         | Users |
 | Description    |The user chooses specific dietary criteria from the drop down box(e.g., "high protein," "low fat," "low sodium"). The system refines the displayed list of food items based on the user's filter input, showing only those items that meet the specified criteria.|
-| Flow of Events | 1.The system displays a list of dietary criteria (e.g., "high protein," "low fat").<br/>2. The user chooses the desired criteria from the drop down box.<br/>3. The system processes the input and applies the specified filters to the list of food items.<br/>4. The system refines the list of food items to include only those that match the user's criteria.<br/>5. The system displays the refined list of food items to the user.|
+| Flow of Events | 1. The system displays a list of dietary criteria (e.g., "high protein," "low fat").<br/>2. The user chooses the desired criteria from the drop down box.<br/>3. The system processes the input and applies the specified filters to the list of food items.<br/>4. The system refines the list of food items to include only those that match the user's criteria.<br/>5. The system displays the refined list of food items to the user.|
 | Alternate Flow | If no food items meet the specified criteria, the system informs the user and provides options to adjust the filter or clear the filter.|
 
 
