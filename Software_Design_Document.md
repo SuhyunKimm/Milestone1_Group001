@@ -530,7 +530,7 @@ Example:
 Landing Screen
 ![Landing Screen Design](./Landing_screen.png)
 Food Search Screen
-![Function 1 Screen Design](./Food Search_screen.png)
+![Function 1 Screen Design](./Food_Search_screen.png)
 Nutrition Breakdown Screen
 ![Function 2 Screen Design](./Nutrition_Breakdown_screen.png)
 Nutrition Range Filter Screen
