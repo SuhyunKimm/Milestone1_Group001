@@ -15,10 +15,10 @@ class Frame(MyFrame):
 
         # Initialize panels
         self.panel_main = PanelMain(self)
-        self.panel_search = PanelFoodSearch(self) ## Change name
-        self.panel_breakdown = PanelBreakdown(self) ## Change name
-        self.panel_rfilter = PanelRangeFilter(self) ## Change name
-        self.panel_lfilter = PanelLevelFilter(self) ## Change name
+        self.panel_search = PanelFoodSearch(self)
+        self.panel_breakdown = PanelBreakdown(self)
+        self.panel_rfilter = PanelRangeFilter(self)
+        self.panel_lfilter = PanelLevelFilter(self)
         self.panel_tracker = PanelCalorieTracker(self)
 
         self.panel_list = [self.panel_main, self.panel_search, self.panel_breakdown, self.panel_rfilter, self.panel_lfilter,
@@ -47,15 +47,15 @@ class Frame(MyFrame):
         pass
 
     def close_current_panel(self, i):
-        if i==1 :
+        if i == 1 :
             self.reset_food_search_panel()
-        elif i==2 :
+        elif i == 2 :
             self.reset_breakdown_panel()
-        elif i==3 :
+        elif i == 3 :
             self.reset_range_filter_panel()
-        elif i==4 :
+        elif i == 4 :
             self.reset_level_filter_panel()
-        elif i==5 :
+        elif i == 5 :
             self.panel_tracker.tracker_reset()
         self.panel_list[i].Hide()
 
