@@ -138,7 +138,9 @@ Features and Functionalities:<br/>
 - Nutrition Breakdown: Allow users to view and choose food from a list, and graphically demonstrate the nutrient breakdown using pie charts and bar graphs.
 - Nutrition Range Filter: Allow users to select a range of nutritional value, and provide a list of food that has the nutritional value within the range.
 - Nutrition Level Filter: For example, if the highest amount of fat among all foods is 30 grams, then foods with less than 10 grams of fat would be considered "low" in fat content. The system will convert all the food content into high, mid or low in nutrient content (eg: coffee high in sugar, low in calories, mid in carb, etc), system then allow user to filter food base on nutritional content level (eg user filter food which low in sugar, low in calories and low in carbs).
-- Nutrition Tracker: Allow users to select foods and check how much a specific nutrient contributes based on the quantity they input and display it via pie charts. For example: if a user wants to track their daily sugar intake, they can input their recommended amount (e.g., 100g) and select foods. The system will display the sugar content of the selected food (e.g., 24g from coffee) as a percentage of the recommended intake, shown in a pie chart (e.g., 24g out of 100g).
+- <code style="color:red"> Calorie Tracker: This feature allows users to select foods and track their calorie intake in relation to their daily calorie goal. Users can set a target daily calorie intake, and as they log different foods, the app calculates what percentage each food contributes to their daily goal. For example, if a user sets a 1500 kcal daily intake and logs a food item with 150 kcal, the app will display this as 10% of their daily intake using a pie chart.
+</code>
+
 
 
 
@@ -213,9 +215,8 @@ Search functionality: <br/>users need to search for food items by name or catego
 
 
 
-- R5.1: The program will accept user’s input for recommended daily intake values for a specific nutrition (eg: sugar, protein, sodium).
-- R5.2: The program will display the percentage of the nutrient consumed relative to the user’s target intake in a pie chart.
-
+- R5.1: <code style="color:red">The program will accept user’s input for daily calorie goal value.</code>
+- R5.2: <code style="color:red">The program will display the percentage of the calorie consumed relative to the user’s target calorie in a pie chart. </code>
 
 
 
@@ -280,13 +281,13 @@ Include at least 5 use cases, each corresponding to a specific function.
 
 
 
-| Use Case ID    | UC-05  |
-|----------------|------|
-| Use Case Name  | Nutrition Tracker |
-| Actors         | Users |
-| Description    | The user tracks total consumption of specific nutrients by selecting nutrients to monitor and adding the food items to a tracking list. |
-| Flow of Events | 1. The user selects a nutrient from the dropdown menu.<br/>2. The user enters the daily intake amount for the selected nutrient.<br/>3. The user searches for a food item using the text field.<br/>4. The system finds and matches food items based on the entered text.<br/>5. If found, the system displays the food item with a ‘Select’ checkbox option.<br/>6. The user checks the box to select the food item, adding it to the tracking list.<br/>7. The system updates the total nutrient amount based on the selected food items.<br/>8. The system displays a pie chart showing the percentage of each nutrient consumed relative to the daily intake amount. |
-| Alternate Flow | 1. If no matching food is found, the system displays the message ‘No food found’.<br/>2. If the total nutrient amount exceeds the daily intake, the system shows a message indicating ‘Over the recommended intake’.|
+| Use Case ID    | UC-05                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Use Case Name  | <code style="color:red">Calorie Tracker </code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Actors         | Users                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Description    | <code style="color:red">Users track their total calorie consumption by adding food items to a tracking list. </code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Flow of Events | <code style="color:red">1. The user enters their daily calorie intake goal. <br/>2. The user searches for a food item using the search bar. <br/>3. The system searches for and displays food items that match the entered text. <br/>4. If a match is found, the system displays the food item in a list. <br/>5. The user selects the food item and clicks the "Select" button, adding it to the tracking list. <br/>6. The system updates the total calorie count based on the selected food items. <br/>7. The system generates and displays a pie chart showing the percentage of calories each food item contributes to the daily goal.</code> |
+| Alternate Flow | <code style="color:red"> 1. If no matching food is found, the system displays the message "No data." <br/>2. If the total calorie intake exceeds the daily goal, the system does not add additional calories to the total. </code>                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 
 
@@ -364,7 +365,7 @@ Include a flowchart that illustrates how your software will operate.
 - Return Value: the set of rows of the filtered food (dataFrame type)
 - Side Effects: No side effects
 7. updateDailyIntake
-- Description: This function takes in the nutrient value and updates then returns the updated nutrient value.
+- Description: <code style="color:red"> This function takes in the caloric value and updates then returns the updated caloric value.</code>
 - Input Parameter : nutrient_value(float), intake_nutrient(float)
 - Return Values: updated_nutrient_value(float)
 - Side Effects: No side effects
