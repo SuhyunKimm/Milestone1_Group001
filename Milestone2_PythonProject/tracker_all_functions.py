@@ -2,7 +2,6 @@ import pandas as pd
 
 def get_data(path) :
     df = pd.read_csv(path)
-    df = pd.read_csv('Food_Nutrition_Dataset.csv')
     return df
 
 def search_food_by_name(df, name) :
@@ -16,7 +15,3 @@ def get_food_name_and_calorie(df) :
     for i in range(len(name_list)):
         output.append(f'{name_list[i]} ({cal_list[i]} kcal)')
     return output
-
-
-# print(df.columns)
-# print(get_food_name_and_calorie(df))
