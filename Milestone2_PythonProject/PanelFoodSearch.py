@@ -1,6 +1,4 @@
 import wx
-import pandas as pd
-from template_main_panel import MainPanel
 from food_search_all_functions import *
 from template_food_search_panel import MyPanel2
 
