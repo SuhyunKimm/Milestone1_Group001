@@ -16,6 +16,7 @@ class PanelFoodSearch(MyPanel2):
         """Handles the Go Back button click."""
         print("Go Back button clicked!")
         self.GetParent().go_to_main()
+        self.food_search_reset()
 
     def food_search_search_btn_click(self, event):
         """Handles the Search button click."""
@@ -35,6 +36,7 @@ class PanelFoodSearch(MyPanel2):
         else:
             # Populate the grid with the search results
             self.populate_search_results(self.search_results)
+
 
     def populate_search_results(self, results_df):
         """Updates the grid with search results from the DataFrame."""
@@ -86,3 +88,29 @@ class PanelFoodSearch(MyPanel2):
         # Set the values in the grid
         for idx, value in enumerate(values):
             self.m_grid7.SetCellValue(0, idx, str(value))
+
+    def clear_results(self):
+        """Clear the results from the grid."""
+        # Clear all the grid data without removing rows/columns
+        self.m_grid7.ClearGrid()
+
+        # Optionally, you can also delete extra rows and columns if needed:
+        current_rows = self.m_grid7.GetNumberRows()
+        current_cols = self.m_grid7.GetNumberCols()
+
+        if current_rows > 0:
+            self.m_grid7.DeleteRows(0, current_rows)
+
+        if current_cols > 0:
+            self.m_grid7.DeleteCols(0, current_cols)
+
+    def food_search_reset(self):
+        """Resets the UI values to how it was when we first open the Food Search page."""
+        # Clear the search input field
+        self.m_textCtrl5.SetValue("")
+
+        # Clear any search results displayed in the results_sizer
+        self.clear_results()
+
+        # Refresh the layout after resetting
+        self.Layout()

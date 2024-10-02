@@ -1,5 +1,5 @@
 import wx
-from level_filter_all_functions import filter_by_nutrition_and_level, df
+from level_filter_all_functions import *
 from template_level_filter_panel import MyPanel2
 
 class PanelLevelFilter(MyPanel2):
@@ -14,6 +14,7 @@ class PanelLevelFilter(MyPanel2):
         """Handles the Go Back button click."""
         print("Go Back button clicked!")
         self.GetParent().go_to_main()
+        self.food_search_reset()
 
     def nutrition_type_choice(self, event):
         """Handles selection of Nutrition type."""
@@ -76,3 +77,29 @@ class PanelLevelFilter(MyPanel2):
         for row_idx in range(rows):
             for col_idx in range(cols):
                 self.m_grid7.SetCellValue(row_idx, col_idx, str(data_frame.iat[row_idx, col_idx]))
+
+    def clear_results(self):
+        """Clear the results from the grid."""
+        # Clear all the grid data without removing rows/columns
+        self.m_grid7.ClearGrid()
+
+
+        # Delete extra rows and columns:
+        current_rows = self.m_grid7.GetNumberRows()
+        current_cols = self.m_grid7.GetNumberCols()
+
+        if current_rows > 0:
+            self.m_grid7.DeleteRows(0, current_rows)
+
+        if current_cols > 0:
+            self.m_grid7.DeleteCols(0, current_cols) 
+
+
+    def food_search_reset(self):
+        """Resets the UI values to how it was when we first open the Food Search page."""
+        # Clear any search results displayed in the results_sizer
+        self.clear_results()
+
+        # Refresh the layout after resetting
+        self.Layout()
+
