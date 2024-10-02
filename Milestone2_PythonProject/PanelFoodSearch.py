@@ -1,7 +1,7 @@
 import wx
-from food_search_all_functions import *
+import pandas as pd
+from food_search_all_functions import search_food
 from template_food_search_panel import MyPanel2
-
 
 class PanelFoodSearch(MyPanel2):
     def __init__(self, parent):
@@ -19,6 +19,7 @@ class PanelFoodSearch(MyPanel2):
 
     def food_search_search_btn_click(self, event):
         """Handles the Search button click."""
+        # Get the search query from the text control
         search_query = self.m_textCtrl5.GetValue().strip().lower()
         if not search_query:
             wx.MessageBox("Please enter a search term.", "Info", wx.OK | wx.ICON_INFORMATION)
@@ -28,32 +29,31 @@ class PanelFoodSearch(MyPanel2):
         self.search_results = search_food(self.df, search_query)
 
         # Update the grid with the search results
-        self.populate_search_results(self.search_results)
+        if isinstance(self.search_results, str):
+            # If the result is a string, display the message (e.g., "Food item not found.")
+            wx.MessageBox(self.search_results, "Info", wx.OK | wx.ICON_INFORMATION)
+        else:
+            # Populate the grid with the search results
+            self.populate_search_results(self.search_results)
 
     def populate_search_results(self, results_df):
         """Updates the grid with search results from the DataFrame."""
-        if results_df is None or results_df.empty:
-            wx.MessageBox("No results found.", "Info", wx.OK | wx.ICON_INFORMATION)
-            self.m_grid7.ClearGrid()
-            return
-
         # Ensure results_df is a DataFrame
         if isinstance(results_df, pd.Series):
             results_df = results_df.to_frame().T
 
         rows, cols = results_df.shape
 
-        # Get the current number of rows and columns
+        # Get the current number of rows and columns in the grid
         current_rows = self.m_grid7.GetNumberRows()
         current_cols = self.m_grid7.GetNumberCols()
 
-        # Adjust the number of rows
+        # Adjust the number of rows and columns in the grid
         if current_rows < rows:
             self.m_grid7.AppendRows(rows - current_rows)
         elif current_rows > rows:
             self.m_grid7.DeleteRows(0, current_rows - rows)
 
-        # Adjust the number of columns
         if current_cols < cols:
             self.m_grid7.AppendCols(cols - current_cols)
         elif current_cols > cols:
@@ -86,4 +86,3 @@ class PanelFoodSearch(MyPanel2):
         # Set the values in the grid
         for idx, value in enumerate(values):
             self.m_grid7.SetCellValue(0, idx, str(value))
-
