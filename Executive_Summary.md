@@ -1,13 +1,13 @@
 # Executive Summary
 
 Please provide your GitHub repository link.
-### GitHub Repository URL: https://github.com/XXXX/XXXXX.git
+### GitHub Repository URL: https://github.com/SuhyunKimm/Milestone1_Group001
 
 ---
 
 You should use your software to prepare an executive summary as outlined below for the five required features.
 
-## 1. [Feature 1 Name]
+## 1. Food Search
 ### Description  
 Briefly describe what this feature does.
 
@@ -23,7 +23,7 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 2. [Feature 2 Name]
+## 2. Nutrition Breakdown
 ### Description  
 Briefly describe what this feature does.
 
@@ -39,7 +39,7 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 3. [Feature 3 Name]
+## 3. Nutrition Level Filter
 ### Description  
 Briefly describe what this feature does.
 
@@ -56,7 +56,7 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 4. [Feature 4 Name]
+## 4. Nutrition Range Filter
 ### Description  
 Briefly describe what this feature does.
 
@@ -73,19 +73,22 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ---
 
-## 5. [Feature 5 Name]
+## 5. Calorie Tracker
 ### Description  
-Briefly describe what this feature does.
+The calorie tracker enables users to monitor their daily calorie intake by setting a personalized calorie goal and selecting food items they have consumed or plan to consume.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Select 'Nutrition Tracker' from the main page.
+2. Set your personalized calorie goal using the adjustable slider.
+3. Search for a food item by entering its name in the search bar.
+4. Select the desired food item by clicking 'Select' button beneath the list of results.
+5. View a pie chart displaying the nutritional breakdown of all added food items.
 
 ### Screenshots
-Include screenshots for each step demonstrating the use of this feature.    
-![1](./visual_design.png)
 
-![2](./visual_design.png)
+![1](./tracker_screenshot.png)
+
 
 
 ---
+
