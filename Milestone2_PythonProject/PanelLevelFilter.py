@@ -1,8 +1,8 @@
 import wx
 from level_filter_all_functions import *
-from template_level_filter_panel import MyPanel2
+from template_level_filter_panel import LevelFilterPanel
 
-class PanelLevelFilter(MyPanel2):
+class PanelLevelFilter(LevelFilterPanel):
     def __init__(self, parent):
         super().__init__(parent)
 
