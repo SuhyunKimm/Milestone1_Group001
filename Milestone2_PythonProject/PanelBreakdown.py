@@ -1,68 +1,63 @@
 #from template_breakdown_panel import BreakdownPanel
 from template_main_panel import MainPanel
 import wx
-import math
-from template_nutrition_range_filter import NutritionRangeFilterPanel
-from range_filter_all_functions import *
+import matplotlib.pyplot as plt
+from template_nutrition_breakdown import NutritionBreakdownPanel
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+from nutrition_breakdown_all_functions import *
 
-class PanelRangeFilter(NutritionRangeFilterPanel):
+class PanelNutritionBreakdown(NutritionBreakdownPanel):
     def __init__(self, parent):
         super().__init__(parent)
-
-        self.df = load_data(r'.\\UI-design-test\\Food_Nutrition_Dataset.csv')
-
-        self.RF_filter_btn.Bind(wx.EVT_BUTTON, self.RF_OnFilter)
-
-        self.RF_result.InsertColumn(0, "Food name", width=wx.LIST_AUTOSIZE_USEHEADER)
-        
-        self.RF_nutrient_choiceChoices = list(self.df.columns[1:].values)                           #append the nutrient choices to the dropbox
-        self.RF_nutrient_choice.SetItems(self.RF_nutrient_choiceChoices)
-
-    def RF_OnChoose(self, event):
-        self.RF_nutrient_name = self.RF_nutrient_choice.GetStringSelection()
-
-        RF_nutrient_min_value = math.ceil(min(self.df[self.RF_nutrient_name]))
-        RF_nutrient_max_value = math.ceil(max(self.df[self.RF_nutrient_name]))
-
-        self.RF_max_slider.SetMin(RF_nutrient_min_value)
-        self.RF_max_slider.SetMax(RF_nutrient_max_value)
-        self.RF_max_slider.SetValue(RF_nutrient_max_value)  
-
-        self.RF_min_slider.SetMin(RF_nutrient_min_value)
-        self.RF_min_slider.SetMax(RF_nutrient_max_value)
-        self.RF_min_slider.SetValue(RF_nutrient_min_value)
-
-        self.Layout()
+        self.df = load_data('Food_Nutrition_Dataset.csv')
+        self.canvas = None
     
+    def NB_OnSearch(self, event):
+        clear_previous_data(self.canvas, self.NB_caloric_value_text, self.NB_nutrition_density_text, self.NB_result_text)
 
-    def OnSliderUpdate(self, event):
+        NB_search_text = self.NB_search_text.GetValue().strip()
 
-        self.RF_min_value_static.SetLabel(str(self.RF_min_slider.GetValue()))
-        if self.RF_max_slider.GetValue() < self.RF_min_slider.GetValue():
-            self.RF_max_slider.SetValue(self.RF_min_slider.GetValue())
-        self.RF_max_value_static.SetLabel(str(self.RF_max_slider.GetValue()))
-        self.Layout()
+        if NB_search_text:
+            matches = search_food(self.df, NB_search_text)
 
-    def RF_OnFilter(self, event):
+            if not matches.empty:
+                result = matches.iloc[0]
+                food_name = result['food'].title()
+                nutrients = extract_nutrient_info(result)
 
-        RF_min_value = self.RF_min_slider.GetValue()
-        RF_max_value = self.RF_max_slider.GetValue()
+                major_nutrients = prepare_nutrients(nutrients)
 
-        food_list, message = filter_foods_by_nutrient(self.df, self.RF_nutrient_name, RF_min_value, RF_max_value)
+                caloric_value = result.iloc[1]  
+                nutrition_density = result.iloc[-1]  
 
-        self.RF_result.DeleteAllItems()
+                self.NB_caloric_value_text.SetLabel(f"Caloric Value: {caloric_value}")
+                self.NB_nutrition_density_text.SetLabel(f"Nutrition Density: {nutrition_density}")
 
-        if food_list:
-            for i, food in enumerate(food_list):
-                self.RF_result.InsertItem(i, food.title())  # Add items to ListCtrl
+                self.NB_caloric_value_text.Show()
+                self.NB_nutrition_density_text.Show()
+
+                fig, axes = plt.subplots(1, 2)
+                ax1, ax2 = axes
+                plot_nutrients(major_nutrients, food_name, ax1, ax2)
+
+                fig.tight_layout()
+                h, w = self.NB_chart_panel.GetSize()
+                fig.set_size_inches(h / fig.get_dpi(), w / fig.get_dpi())
+                self.canvas = FigureCanvas(self.NB_chart_panel, -1, fig)
+                self.canvas.SetSize((h, w))
+
+            else:
+                self.NB_result_text.SetLabel(f'No data found for "{self.NB_search_text.GetValue()}"')
+                self.NB_result_text.Show()
         else:
-            self.RF_result.InsertItem(0, message)  # Display message if no results found
+            self.NB_result_text.SetLabel("Please enter a food name to search.")
+            self.NB_result_text.Show()
 
         self.Layout()
 
 if __name__ == "__main__":
     app = wx.App(False)
     frame = wx.Frame(None, title="Nutrition Breakdown", size=(800, 600))
-    panel = PanelRangeFilter(frame)
+    panel = PanelNutritionBreakdown(frame)
     frame.Show(True)
     app.MainLoop()
