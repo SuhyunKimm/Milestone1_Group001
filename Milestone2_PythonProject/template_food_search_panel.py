@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 ## Python code generated with wxFormBuilder (version 4.2.1-43-gf15ce330)
 ## http://www.wxformbuilder.org/
@@ -18,7 +16,7 @@ _ = gettext.gettext
 ## Class MyPanel2
 ###########################################################################
 
-class FoodSearchPanel ( wx.Panel ):
+class MyPanel2 ( wx.Panel ):
 
     def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
         wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
