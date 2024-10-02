@@ -1,64 +1,76 @@
-import pandas as pd
-
-from level_filter_all_functions import df
-from template_main_panel import MainPanel
 import wx
+import pandas as pd
+from level_filter_all_functions import filter_by_nutrition_and_level, df
+from template_main_panel import MainPanel
 from template_level_filter_panel import MyPanel2
 
 class PanelLevelFilter(MyPanel2):
     def __init__(self, parent):
         super().__init__(parent)
-        self.m_choice3 = wx.ComboBox(self, choices=list(df.columns), style=wx.CB_READONLY)
 
-
-
-
-
-    def nutrition_type_choice(self, event):
-        """Override Nutrition type choice."""
-        selected_nutrition_type = self.m_choice3.GetValue()
-
-    def nutrition_level_choice(self, event):
-        """Override Nutrition level choice."""
-        selected_nutrition_level = self.m_choice4.GetValue()
-
+        # Populate choices for the dropdown menus
+        self.m_choice3.SetItems(list(df.columns))  # Set items for nutrition type
+        self.m_choice4.SetItems(["low", "mid", "high"])  # Set items for nutrition level
 
     def level_filter_go_back_btn_click(self, event):
         """Handles the Go Back button click."""
+        # Assuming `go_to_main()` is a method in the parent class to navigate back
         print("Go Back button clicked!")
         self.GetParent().go_to_main()
 
-    def level_filter_search_btn_click(self, event):
-        """Override Search button click."""
-        nutrition_type = self.nutrition_type_combobox.GetValue()
-        nutrition_level = self.nutrition_level_combobox.GetValue()
+    def nutrition_type_choice(self, event):
+        """Handles selection of Nutrition type."""
+        selected_nutrition_type = self.m_choice3.GetStringSelection()
+        print(f"Selected Nutrition Type: {selected_nutrition_type}")
+        # Additional logic can be added here if needed based on the selection
 
+    def nutrition_level_choice(self, event):
+        """Handles selection of Nutrition level."""
+        selected_nutrition_level = self.m_choice4.GetStringSelection()
+        print(f"Selected Nutrition Level: {selected_nutrition_level}")
+        # Additional logic can be added here if needed based on the selection
+
+    def level_filter_search_btn_click(self, event):
+        """Handles the Search button click."""
+        # Get the selected values from the dropdown menus
+        nutrition_type = self.m_choice3.GetStringSelection()
+        nutrition_level = self.m_choice4.GetStringSelection()
+
+        # Ensure both a nutrition type and level are selected
         if not nutrition_type or not nutrition_level:
             wx.MessageBox("Please select both nutrition type and nutrition level.", "Info", wx.OK | wx.ICON_INFORMATION)
             return
 
-        # Convert nutrition level to an integer (index is zero-based)
-        level_index = int(nutrition_level) - 1
+        # Filter the DataFrame based on the selected nutrition type and level
+        filtered_df = filter_by_nutrition_and_level(nutrition_type, nutrition_level)
 
-        # Filter DataFrame based on selected nutrition type and level
-        if nutrition_type in df.columns and level_index < len(df):
-            filtered_data = df[[nutrition_type]].iloc[[level_index]]
-            self.populate_grid(filtered_data)
+        # Handle the case where no matches are found or display the filtered data
+        if isinstance(filtered_df, str):
+            wx.MessageBox(filtered_df, "Info", wx.OK | wx.ICON_INFORMATION)
         else:
-            wx.MessageBox("Invalid selection. Please try again.", "Error", wx.OK | wx.ICON_ERROR)
+            self.populate_grid(filtered_df)
 
     def populate_grid(self, data_frame):
-        """Populates the wx.Grid with the data from the DataFrame."""
+        """Populates the wx.Grid with the data from the filtered DataFrame."""
         rows, cols = data_frame.shape
 
-        # Clear the grid and recreate it with the new size
+        # Clear existing grid data and adjust grid dimensions
         self.m_grid7.ClearGrid()
-        if self.m_grid7.GetNumberRows() > 0:
-            self.m_grid7.DeleteRows(0, self.grid.GetNumberRows())
-        if self.m_grid7.GetNumberCols() > 0:
-            self.m_grid7.DeleteCols(0, self.grid.GetNumberCols())
 
-        self.m_grid7.CreateGrid(rows, cols)
+        # Adjust rows and columns
+        current_rows = self.m_grid7.GetNumberRows()
+        current_cols = self.m_grid7.GetNumberCols()
+
+        # Adjust the grid's rows and columns based on the filtered data
+        if current_rows < rows:
+            self.m_grid7.AppendRows(rows - current_rows)
+        elif current_rows > rows:
+            self.m_grid7.DeleteRows(0, current_rows - rows)
+
+        if current_cols < cols:
+            self.m_grid7.AppendCols(cols - current_cols)
+        elif current_cols > cols:
+            self.m_grid7.DeleteCols(0, current_cols - cols)
 
         # Set column labels
         for col_idx, col_label in enumerate(data_frame.columns):
@@ -68,3 +80,4 @@ class PanelLevelFilter(MyPanel2):
         for row_idx in range(rows):
             for col_idx in range(cols):
                 self.m_grid7.SetCellValue(row_idx, col_idx, str(data_frame.iat[row_idx, col_idx]))
+
