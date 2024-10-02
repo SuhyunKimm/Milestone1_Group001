@@ -1,6 +1,10 @@
 import pytest
 
 from tracker_all_functions import *
+from breakdown_all_functions import *
+from food_search_all_functions import *
+from range_filter_all_functions import *
+from level_filter_all_functions import *
 
 def test_get_data_valid() :
     filepath = 'Food_Nutrition_Dataset.csv'
@@ -82,3 +86,4 @@ def test_get_food_name_and_calorie_empty():
     expected = []
 
     assert result == expected
+
