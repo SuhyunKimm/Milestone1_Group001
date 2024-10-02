@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import wx
 import math
 from template_nutrition_range_filter import NutritionRangeFilterPanel
@@ -64,3 +65,9 @@ if __name__ == "__main__":
     panel = PanelRangeFilter(frame)
     frame.Show(True)
     app.MainLoop()
+=======
+from template_range_filter_panel import NutritionRangeFilterPanel
+
+class PanelRangeFilter(NutritionRangeFilterPanel) : #Change this argument to the class name of template_range_filter_panel.py'''):
+    pass
+>>>>>>> f9501f9b0297b41d8f27f7d82b8e6655a5b1b43a
