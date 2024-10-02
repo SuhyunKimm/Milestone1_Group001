@@ -3,10 +3,10 @@ import pandas as pd
 # Load the dataset
 df = pd.read_csv('./Food_Nutrition_Dataset.csv')
 
-# Assume the DataFrame has a "Food Name" column.
+
 # Convert numeric columns to appropriate data types to avoid type issues
 for column in df.columns:
-    if column != "food":  # Exclude "Food Name" from numeric conversion
+    if column != "food":  # Exclude "food" from numeric conversion
         df[column] = pd.to_numeric(df[column], errors='coerce')
 
 def categorize_nutrition(value, max_value):

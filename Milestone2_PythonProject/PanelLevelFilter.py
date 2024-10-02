@@ -78,4 +78,3 @@ class PanelLevelFilter(MyPanel2):
         for row_idx in range(rows):
             for col_idx in range(cols):
                 self.m_grid7.SetCellValue(row_idx, col_idx, str(data_frame.iat[row_idx, col_idx]))
-
