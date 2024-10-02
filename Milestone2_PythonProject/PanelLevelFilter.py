@@ -1,7 +1,5 @@
 import wx
-import pandas as pd
 from level_filter_all_functions import filter_by_nutrition_and_level, df
-from template_main_panel import MainPanel
 from template_level_filter_panel import MyPanel2
 
 class PanelLevelFilter(MyPanel2):
