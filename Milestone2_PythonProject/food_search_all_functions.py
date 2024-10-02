@@ -1,12 +1,17 @@
 import pandas as pd
+
+# Load the dataset
 df = pd.read_csv('./Food_Nutrition_Dataset.csv')
 
+# Function to search for nutritional data based on partial food name input
+def search_food(df, food_name):
+    """Searches for nutritional data of foods containing the specified food name."""
+    # Search for foods that contain the food_name (case-insensitive)
+    matching_rows = df[df['food'].str.contains(food_name, case=False, na=False)]
 
-# Function to search for nutritional data based on food name input
-def search_food(df,food_name):
-    df.set_index('food', inplace=True)
-    if food_name in df.index:
-        result_df = df.loc[food_name].to_frame().T
-        return result_df
+    # If matching rows are found, return them
+    if not matching_rows.empty:
+        return matching_rows
     else:
         return "Food item not found."
+
