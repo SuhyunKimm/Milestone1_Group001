@@ -1,6 +1,6 @@
 import wx
 import math
-from template_nutrition_range_filter import NutritionRangeFilterPanel
+from template_range_filter_panel import NutritionRangeFilterPanel
 from range_filter_all_functions import *
 
 class PanelRangeFilter(NutritionRangeFilterPanel):
