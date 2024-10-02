@@ -14,7 +14,6 @@ class PanelLevelFilter(MyPanel2):
 
     def level_filter_go_back_btn_click(self, event):
         """Handles the Go Back button click."""
-        # Assuming `go_to_main()` is a method in the parent class to navigate back
         print("Go Back button clicked!")
         self.GetParent().go_to_main()
 
@@ -22,13 +21,12 @@ class PanelLevelFilter(MyPanel2):
         """Handles selection of Nutrition type."""
         selected_nutrition_type = self.m_choice3.GetStringSelection()
         print(f"Selected Nutrition Type: {selected_nutrition_type}")
-        # Additional logic can be added here if needed based on the selection
 
     def nutrition_level_choice(self, event):
         """Handles selection of Nutrition level."""
         selected_nutrition_level = self.m_choice4.GetStringSelection()
         print(f"Selected Nutrition Level: {selected_nutrition_level}")
-        # Additional logic can be added here if needed based on the selection
+
 
     def level_filter_search_btn_click(self, event):
         """Handles the Search button click."""
