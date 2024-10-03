@@ -18,7 +18,7 @@ _ = gettext.gettext
 ## Class MyPanel2
 ###########################################################################
 
-class LevelFilterPanel ( wx.Panel ):
+class MyPanel2 ( wx.Panel ):
 
     def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
         wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
@@ -90,26 +90,18 @@ class LevelFilterPanel ( wx.Panel ):
         self.Layout()
 
         # Connect Events
-        self.level_filter_go_back_btn.Bind( wx.EVT_BUTTON, self.level_filter_go_back_btn_click )
-        self.m_choice3.Bind( wx.EVT_CHOICE, self.nutrition_type_choice )
-        self.m_choice4.Bind( wx.EVT_CHOICE, self.nutrition_level_choice )
-        self.level_filter_search_btn.Bind( wx.EVT_BUTTON, self.level_filter_search_btn_click )
+        self.level_filter_go_back_btn.Bind( wx.EVT_BUTTON, self.food_search_go_back_btn_click )
+        self.level_filter_search_btn.Bind( wx.EVT_BUTTON, self.food_search_search_btn_click )
 
     def __del__( self ):
         pass
 
 
     # Virtual event handlers, override them in your derived class
-    def level_filter_go_back_btn_click( self, event ):
+    def food_search_go_back_btn_click( self, event ):
         event.Skip()
 
-    def nutrition_type_choice( self, event ):
-        event.Skip()
-
-    def nutrition_level_choice( self, event ):
-        event.Skip()
-
-    def level_filter_search_btn_click( self, event ):
+    def food_search_search_btn_click( self, event ):
         event.Skip()
 
 

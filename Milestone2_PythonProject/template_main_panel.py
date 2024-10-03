@@ -43,7 +43,7 @@ class MainPanel ( wx.Panel ):
         self.main_btn_nutrition_level_filter = wx.Button( self, wx.ID_ANY, _(u"Nutrition Level Filter"), wx.DefaultPosition, wx.DefaultSize, 0 )
         main_panel_btn_sizer.Add( self.main_btn_nutrition_level_filter, 0, wx.ALL|wx.EXPAND, 10 )
 
-        self.main_btn_nutrition_tracker = wx.Button( self, wx.ID_ANY, _(u"Calorie Tracker"), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.main_btn_nutrition_tracker = wx.Button( self, wx.ID_ANY, _(u"Nutrition Tracker"), wx.DefaultPosition, wx.DefaultSize, 0 )
         main_panel_btn_sizer.Add( self.main_btn_nutrition_tracker, 0, wx.ALL|wx.EXPAND, 10 )
 
 
