@@ -4,7 +4,7 @@ import wx.grid
 from template_frame import MyFrame
 from PanelMain import PanelMain
 from PanelFoodSearch import PanelFoodSearch
-from PanelBreakdown import PanelBreakdown
+from PanelBreakdown import PanelNutritionBreakdown
 from PanelRangeFilter import PanelRangeFilter
 from PanelLevelFilter import PanelLevelFilter
 from PanelTracker import PanelCalorieTracker
@@ -16,7 +16,7 @@ class Frame(MyFrame):
         # Initialize panels
         self.panel_main = PanelMain(self)
         self.panel_search = PanelFoodSearch(self)
-        self.panel_breakdown = PanelBreakdown(self)
+        self.panel_breakdown = PanelNutritionBreakdown(self)
         self.panel_rfilter = PanelRangeFilter(self)
         self.panel_lfilter = PanelLevelFilter(self)
         self.panel_tracker = PanelCalorieTracker(self)

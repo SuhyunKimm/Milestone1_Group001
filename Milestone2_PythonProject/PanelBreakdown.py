@@ -2,9 +2,9 @@
 from template_main_panel import MainPanel
 import wx
 import matplotlib.pyplot as plt
-from template_nutrition_breakdown import NutritionBreakdownPanel
+from template_breakdown_panel import NutritionBreakdownPanel
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
-from nutrition_breakdown_all_functions import *
+from breakdown_all_functions import *
 
 class PanelNutritionBreakdown(NutritionBreakdownPanel):
     def __init__(self, parent):
