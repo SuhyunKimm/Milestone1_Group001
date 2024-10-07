@@ -1,9 +1,9 @@
 import wx
 from food_search_all_functions import *
-from template_food_search_panel import MyPanel2
+from template_food_search_panel import FoodSearchPanel
 
 
-class PanelFoodSearch(MyPanel2):
+class PanelFoodSearch(FoodSearchPanel):
     def __init__(self, parent):
         super().__init__(parent)
 

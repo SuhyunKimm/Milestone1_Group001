@@ -1,6 +1,6 @@
 import pytest
 
-from tracker_all_functions import *
+from all_functions import *
 
 def test_get_data_valid() :
     filepath = 'Food_Nutrition_Dataset.csv'
