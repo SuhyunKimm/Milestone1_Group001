@@ -128,4 +128,3 @@ class NutritionRangeFilterPanel ( wx.Panel ):
     def RF_OnFilter( self, event ):
         event.Skip()
 
-

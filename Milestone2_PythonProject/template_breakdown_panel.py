@@ -102,4 +102,3 @@ class NutritionBreakdownPanel ( wx.Panel ):
     def NB_OnSearch( self, event ):
         event.Skip()
 
-

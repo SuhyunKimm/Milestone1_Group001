@@ -91,4 +91,3 @@ class FoodSearchPanel ( wx.Panel ):
 
     def food_search_search_btn_click( self, event ):
         event.Skip()
-

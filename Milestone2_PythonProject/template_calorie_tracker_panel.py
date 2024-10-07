@@ -127,4 +127,3 @@ class CalorieTrackerPanel ( wx.Panel ):
     def tracker_select_food( self, event ):
         event.Skip()
 
-

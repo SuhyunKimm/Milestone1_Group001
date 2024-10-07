@@ -80,4 +80,3 @@ class MainPanel ( wx.Panel ):
     def main_btn_tracker_clicked( self, event ):
         event.Skip()
 
-
