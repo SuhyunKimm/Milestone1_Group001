@@ -7,21 +7,18 @@ from all_functions import *
 class PanelNutritionBreakdown(NutritionBreakdownPanel):
     def __init__(self, parent):
         super().__init__(parent)
-        self.df = load_data('Food_Nutrition_Dataset.csv')
-        self.canvas = None
-
-    def go_to_main(self, event):
-        self.GetParent().go_to_main()
-
+        self.df = get_data('Food_Nutrition_Dataset.csv')
+        self.df.iloc[:, 1:] = self.df.iloc[:, 1:].apply(pd.to_numeric, errors='coerce')
+    
     def NB_OnSearch(self, event):
-        # to be fixed
-        '''def clear_previous_data(canvas, *texts):
-            """Clear previous chart and texts."""
-            if canvas is not None:
-                canvas.Destroy()
-            for text in texts:
-                text.Hide()'''
-        clear_previous_data(self.canvas, self.NB_caloric_value_text, self.NB_nutrition_density_text, self.NB_result_text)
+        self.NB_chart_panel.DestroyChildren()
+        self.NB_caloric_value_text = None
+        self.NB_nutrition_density_text = None
+        self.NB_search_text = None
+        self.NB_result_text = None
+        self.NB_caloric_value_text.Hide()
+        self.NB_nutrition_density_text.Hide()
+        self.NB_result_text.Hide()
 
         NB_search_text = self.NB_search_text.GetValue().strip()
 
@@ -45,25 +42,21 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
                 self.NB_nutrition_density_text.Show()
 
                 fig, axes = plt.subplots(1, 2)
-                ax1, ax2 = axes
-                # to be fixed
-                '''def plot_nutrients(major_nutrients, food_name, ax1, ax2):
-                    """Plot pie chart and bar graph for nutrients."""
-                    names = list(major_nutrients.keys())
-                    values = list(major_nutrients.values())
+                ax1, ax2 = axes            
+                names = list(major_nutrients.keys())
+                values = list(major_nutrients.values())
 
-                    # Pie chart
-                    ax1.pie(values, labels=names, autopct='%1.1f%%', startangle=90, shadow=True)
-                    ax1.set_title(f"Pie Chart for {food_name}'s nutrition values")
+                # Pie chart
+                ax1.pie(values, labels=names, autopct='%1.1f%%', startangle=90, shadow=True)
+                ax1.set_title(f"Pie Chart for {food_name}'s nutrition values")
 
-                    # Bar graph
-                    ax2.bar(names, values, color='skyblue')
-                    ax2.set_xlabel('Nutrients')
-                    ax2.set_ylabel('Values')
-                    ax2.set_title(f"Bar Graph for {food_name}'s nutrition values")
-                    ax2.set_xticks(range(len(names)))
-                    ax2.set_xticklabels(names, rotation=90)'''
-                #plot_nutrients(major_nutrients, food_name, ax1, ax2)
+                # Bar graph
+                ax2.bar(names, values, color='skyblue')
+                ax2.set_xlabel('Nutrients')
+                ax2.set_ylabel('Values')
+                ax2.set_title(f"Bar Graph for {food_name}'s nutrition values")
+                ax2.set_xticks(range(len(names)))
+                ax2.set_xticklabels(names, rotation=90)
 
                 fig.tight_layout()
                 h, w = self.NB_chart_panel.GetSize()
@@ -80,9 +73,13 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
 
         self.Layout()
 
-if __name__ == "__main__":
-    app = wx.App(False)
-    frame = wx.Frame(None, title="Nutrition Breakdown", size=(800, 600))
-    panel = PanelNutritionBreakdown(frame)
-    frame.Show(True)
-    app.MainLoop()
+    def NB_reset(self):
+        self.NB_chart_panel.DestroyChildren()
+        self.NB_caloric_value_text = None
+        self.NB_nutrition_density_text = None
+        self.NB_search_text = None
+        self.NB_result_text = None
+
+    def go_to_main(self, event):
+        self.RF_reset()
+        self.GetParent().go_to_main()
