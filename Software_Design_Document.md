@@ -494,9 +494,9 @@ Error Handling (e.g., “No food meets the requirements” message)
 5. Nutrition level filter
 - Purpose: Filters foods based on specific nutritional levels (e.g., high protein, low fat).
 - Sub-components: Criteria Selection (from drop-down menu), Filtered Results Display ,Error Handling (e.g., “No food matches the criteria” message).
-6. Nutrition tracker module
-- Purpose: Tracks user’s daily intake of specific nutrients and visualizes the progress.
-- Sub-components:Nutrient Selection Panel , Intake Input Field , Tracked Foods Display , Visualization Display (Pie Chart showing intake progress), Error Handling (e.g., “Over the recommended intake” message)
+6. <code style="color:red">Calorie tracker module
+- Purpose: Tracks user’s daily calorie intake and visualizes the progress.
+- Sub-components: Calorie Intake Slider, Food Search Bar, Search Button, Searched Foods Display , Visualization Display (Pie Chart showing intake progress), Error Handling (e.g., “Over the recommended intake” message) </code>
 
 
 
@@ -538,7 +538,7 @@ Nutrition Range Filter Screen
 ![Function 3 Screen Design](./Range_Filter_screen.png)
 Nutrition Level Filter Screen
 ![Function 4 Screen Design](./Level_Filter_screen.png)
-Nutrition Tracker Screen
+<code style="color:red"> Calorie Tracker Screen </code>
 ![Function 5 Screen Design](./Nutrition_Tracker_screen.png)
 
 

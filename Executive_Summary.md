@@ -25,11 +25,13 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ## 2. Nutrition Breakdown
 ### Description  
-Briefly describe what this feature does.
+The Nutrition Breakdown feature allows users to view the breakdown of the nutrients of selected food via an Pie chart and a Bar graph. The charts and graphs combine all the nutrients have values less than 1 into a group called 'Other nutrients'.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Select 'Nutrition Breakdown' from the main page.
+2. Enter food name into the search box.
+3. Select 'Search' button to search.
+4. View the Pie chart and Bar graph.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
@@ -58,11 +60,15 @@ Include screenshots for each step demonstrating the use of this feature.
 
 ## 4. Nutrition Range Filter
 ### Description  
-Briefly describe what this feature does.
+This feature allows users to filter all the foods within the selected range of nutrition value.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Select 'Nutrition Range Filter' from the main page.
+2. Select nutrition from the drop box.
+3. Select 'Max value' using the Max slider.
+4. Select 'Min value' using the Min slider.
+5. Select 'Filter' button to search.
+6. View the filtered food in the list.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.    
