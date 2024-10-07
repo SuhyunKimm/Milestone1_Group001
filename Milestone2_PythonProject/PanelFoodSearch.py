@@ -1,5 +1,5 @@
 import wx
-from food_search_all_functions import *
+from all_functions import *
 from template_food_search_panel import FoodSearchPanel
 
 

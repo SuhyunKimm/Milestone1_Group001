@@ -1,6 +1,6 @@
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg
 from template_calorie_tracker_panel import CalorieTrackerPanel
-from tracker_all_functions import *
+from all_functions import *
 import matplotlib
 matplotlib.use('WXAgg')
 import matplotlib.pyplot as plt
