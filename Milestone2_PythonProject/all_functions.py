@@ -67,7 +67,7 @@ def nutrition_level_filter(df):
     return df_filtered
 
 # Function to filter based on user input (type of nutrition and desired level)
-def filter_by_nutrition_and_level(df, nutrition_type, desired_level):
+def filter_by_nutrition_and_level(nutrition_type, desired_level):
     """Filters the DataFrame by a given nutrition type and level (low, mid, high)."""
     # Ensure the user input is valid
     if nutrition_type not in df.columns:
