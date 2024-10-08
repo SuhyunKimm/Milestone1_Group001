@@ -37,9 +37,9 @@ The Nutrition Breakdown feature allows users to view the breakdown of the nutrie
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
-![1](./Nutrition_breakdown_1.png)
-![2](./Nutrition_breakdown_2.png)
-![3](./Nutrition_breakdown_3.png)
+![1](./Nutrition_Breakdown_1.png)
+![2](./Nutrition_Breakdown_2.png)
+![3](./Nutrition_Breakdown_3.png)
 
 
 ---
@@ -76,11 +76,11 @@ This feature allows users to filter all the foods within the selected range of n
 6. View the filtered food in the list.
 
 ### Screenshots
-Include screenshots for each step demonstrating the use of this feature. 
-![1](./Range_filter_1.png)
-![2](./Range_filter_2.png)
-![3](./Range_filter_3.png)
-![4](./Range_filter_4.png)
+Include screenshots for each step demonstrating the use of this feature.    
+![1](./Range_Filter_1.png)
+![2](./Range_Filter_2.png)
+![3](./Range_Filter_3.png)
+![4](./Range_Filter_4.png)
 
 
 
