@@ -19,7 +19,7 @@ def get_food_name_and_calorie(df) :
 
 def extract_nutrient_info(result):
     """Extract nutrient information from the result."""
-    nutrient_names = list(result.index[2:-1])
+    nutrient_names = list(result.index[2:])
     nutrients = {name: result[name] for name in nutrient_names}
     return nutrients
 

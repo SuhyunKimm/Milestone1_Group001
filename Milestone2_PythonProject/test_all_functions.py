@@ -82,6 +82,22 @@ def test_get_food_name_and_calorie_empty():
 
     assert result == expected
 
+def test_extract_nutrient_info():
+    sample_data = pd.Series({
+        'food': 'Apple',
+        'Caloric Value': 52,
+        'Fat': 0.2,
+        'Sugar': 10.0,
+        'Protein': 0.3
+    })
+    nutrient_info = extract_nutrient_info(sample_data)
+    expected_nutrients = {
+        'Fat': 0.2,
+        'Sugar': 10.0,
+        'Protein': 0.3
+    }
+    assert nutrient_info == expected_nutrients
+
 def test_prepare_nutrients():
     nutrients = {'Protein': 1.5, 'Carbs': 0.5, 'Fat': 0.0, 'Sugars': 0.8}
     major_nutrients = prepare_nutrients(nutrients)
@@ -91,22 +107,30 @@ def test_prepare_nutrients():
     assert 'Other Nutrients' in major_nutrients
 
 def test_filter_foods_by_nutrient_valid_range():
-    df = get_data('Food_Nutrition_Dataset.csv')
-    food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 50, 100)
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon', 'melon', 'Oranges'],
+        'Caloric Value': [95, 105, 107, 82, 62]
+    })
+    food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 60, 70)
     
-    assert 'cream cheese' in food_list                                                          #Expected food found in valid range
+    assert 'Oranges' in food_list
     assert "Foods in range for Caloric Value" in message
 
 def test_filter_foods_by_nutrient_no_foods_in_range():
-    df = get_data('Food_Nutrition_Dataset.csv')
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon', 'melon', 'Oranges'],
+        'Caloric Value': [95, 105, 107, 82, 62]
+    })
     food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 4000, 5000)
     
-    assert food_list == []                                                                      #Should not return any foods for invalid range
+    assert food_list == []
     assert "No foods found for Caloric Value" in message
 
 def test_filter_foods_by_nutrient_invalid_nutrient():
-    df = get_data('Food_Nutrition_Dataset.csv')
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon', 'melon', 'Oranges'],
+        'Caloric Value': [95, 105, 107, 82, 62]
+    })
     food_list, message = filter_foods_by_nutrient(df, '', 50, 100)
-    
-    assert food_list == []                                                                     #Should not return any foods for unknown nutrient
+    assert food_list == []
     assert "Nutrient '' not found" in message
