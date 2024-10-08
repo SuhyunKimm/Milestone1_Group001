@@ -16,14 +16,14 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
         self.NB_nutrition_density_text = None
         self.NB_search_text = None
         self.NB_result_text = None
-        self.NB_caloric_value_text.Hide()
-        self.NB_nutrition_density_text.Hide()
-        self.NB_result_text.Hide()
+        self.NB_caloric_value_text = None
+        self.NB_nutrition_density_text = None
+        self.NB_result_text = None
 
         NB_search_text = self.NB_search_text.GetValue().strip()
 
         if NB_search_text:
-            matches = search_food(self.df, NB_search_text)
+            matches = new_df(self.df, NB_search_text)
 
             if not matches.empty:
                 result = matches.iloc[0]
