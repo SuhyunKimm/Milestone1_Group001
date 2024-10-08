@@ -25,7 +25,7 @@ class PanelFoodSearch(FoodSearchPanel):
             return
 
         # Perform the search and store results
-        self.search_results = search_food(self.df, search_query)
+        self.search_results = search_food_by_name(self.df, search_query)
 
         # Update the grid with the search results
         self.populate_search_results(self.search_results)

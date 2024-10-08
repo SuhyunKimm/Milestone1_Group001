@@ -12,14 +12,16 @@ You should use your software to prepare an executive summary as outlined below f
 Briefly describe what this feature does.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Select 'Food search' from the main page
+2. Enter the food name in the search box.
+3. Select search button.
+4. Result display all the food containing key word.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
-![1](./visual_design.png)
+![1](./Food_search_screen.png)
 
-![2](./visual_design.png)
+
 
 ---
 
@@ -35,9 +37,9 @@ The Nutrition Breakdown feature allows users to view the breakdown of the nutrie
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
-![1](./visual_design.png)
+![1](./Nutrition_breakdown_screen.png)
 
-![2](./visual_design.png)
+
 
 ---
 
@@ -46,14 +48,16 @@ Include screenshots for each step demonstrating the use of this feature.
 Briefly describe what this feature does.
 
 ### Steps
-1. Step-by-step instructions for using this feature.
-2. Add additional steps as needed.
+1. Select Nutrition Level Filter from the screen.
+2. Select nutrition type and nutrition level from the drop down.
+3. Select search button.
+4. Result display all the food within the range.
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.    
-![1](./visual_design.png)
+![1](./Nutrition_level_filter_screen1.png)
 
-![2](./visual_design.png)
+![2](./Nutrition_level_filter_screen2.png)
 
 
 ---
@@ -72,9 +76,9 @@ This feature allows users to filter all the foods within the selected range of n
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.    
-![1](./visual_design.png)
+![1](./Nutrition_range_filter_1.png)
 
-![2](./visual_design.png)
+![2](./Nutrition_range_filter_screen2.png)
 
 
 ---
