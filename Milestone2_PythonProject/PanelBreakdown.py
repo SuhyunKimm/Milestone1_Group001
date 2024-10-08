@@ -9,8 +9,9 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
         super().__init__(parent)
         self.df = get_data('Food_Nutrition_Dataset.csv')
         self.df.iloc[:, 1:] = self.df.iloc[:, 1:].apply(pd.to_numeric, errors='coerce')
-    
+	
     def NB_OnSearch(self, event):
+<<<<<<< HEAD
         self.NB_chart_panel.DestroyChildren()
         self.NB_caloric_value_text = None
         self.NB_nutrition_density_text = None
@@ -19,11 +20,17 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
         self.NB_caloric_value_text = None
         self.NB_nutrition_density_text = None
         self.NB_result_text = None
+=======
+>>>>>>> vincent
 
         NB_search_text = self.NB_search_text.GetValue().strip()
 
         if NB_search_text:
+<<<<<<< HEAD
             matches = new_df(self.df, NB_search_text)
+=======
+            matches = search_food_by_name(self.df, NB_search_text)
+>>>>>>> vincent
 
             if not matches.empty:
                 result = matches.iloc[0]
@@ -75,11 +82,11 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
 
     def NB_reset(self):
         self.NB_chart_panel.DestroyChildren()
-        self.NB_caloric_value_text = None
-        self.NB_nutrition_density_text = None
-        self.NB_search_text = None
-        self.NB_result_text = None
+        self.NB_caloric_value_text.SetLabel('')
+        self.NB_nutrition_density_text.SetLabel('')
+        self.NB_search_text.SetLabel('')
+        self.NB_result_text.SetLabel('')
 
     def go_to_main(self, event):
-        self.RF_reset()
+        self.NB_reset()
         self.GetParent().go_to_main()
