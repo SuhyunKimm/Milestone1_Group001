@@ -1,7 +1,6 @@
 import wx
-from all_functions import *  # Import necessary functions
 from template_level_filter_panel import LevelFilterPanel
-
+from all_functions import *
 
 class PanelLevelFilter(LevelFilterPanel):
     def __init__(self, parent):
@@ -18,7 +17,7 @@ class PanelLevelFilter(LevelFilterPanel):
         """Handles the Go Back button click."""
         print("Go Back button clicked!")
         self.GetParent().go_to_main()
-        self.food_search_reset()
+        self.level_filter_reset()
 
     def nutrition_type_choice(self, event):
         """Handles selection of Nutrition type."""
@@ -42,7 +41,7 @@ class PanelLevelFilter(LevelFilterPanel):
             return
 
         # Filter the DataFrame using the filter_by_nutrition_and_level function
-        filtered_df = filter_by_nutrition_and_level(nutrition_type, nutrition_level)
+        filtered_df = filter_by_nutrition_and_level(self.df,nutrition_type, nutrition_level)
 
         # Handle the case where no matches are found or display the filtered data
         if isinstance(filtered_df, str):  # When no results or error message is returned
@@ -95,7 +94,7 @@ class PanelLevelFilter(LevelFilterPanel):
         if current_cols > 0:
             self.m_grid7.DeleteCols(0, current_cols)
 
-    def food_search_reset(self):
+    def level_filter_reset(self):
         """Resets the UI values to how it was when we first opened the Food Search page."""
         # Clear any search results displayed in the grid
         self.clear_results()

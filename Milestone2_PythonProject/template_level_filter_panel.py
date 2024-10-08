@@ -90,18 +90,26 @@ class LevelFilterPanel ( wx.Panel ):
         self.Layout()
 
         # Connect Events
-        self.level_filter_go_back_btn.Bind( wx.EVT_BUTTON, self.food_search_go_back_btn_click )
-        self.level_filter_search_btn.Bind( wx.EVT_BUTTON, self.food_search_search_btn_click )
+        self.level_filter_go_back_btn.Bind( wx.EVT_BUTTON, self.level_filter_go_back_btn_click )
+        self.m_choice3.Bind( wx.EVT_CHOICE, self.nutrition_type_choice )
+        self.m_choice4.Bind( wx.EVT_CHOICE, self.nutrition_level_choice )
+        self.level_filter_search_btn.Bind( wx.EVT_BUTTON, self.level_filter_search_btn_click )
 
     def __del__( self ):
         pass
 
 
     # Virtual event handlers, override them in your derived class
-    def food_search_go_back_btn_click( self, event ):
+    def level_filter_go_back_btn_click( self, event ):
         event.Skip()
 
-    def food_search_search_btn_click( self, event ):
+    def nutrition_type_choice( self, event ):
+        event.Skip()
+
+    def nutrition_level_choice( self, event ):
+        event.Skip()
+
+    def level_filter_search_btn_click( self, event ):
         event.Skip()
 
 
