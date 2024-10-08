@@ -72,7 +72,7 @@ def test_get_food_name_and_calorie_valid():
         'Caloric Value': [95, 105, 62, 82, 62]
     })
     result = get_food_name_and_calorie(sample_data)
-    expected = ['Apple (95 kcal)', 'Pineapple (105 kcal)', 'Watermelon (62 kcal)', 'melon (82 kcal)', 'Oranges (62 kcal)
+    expected = ['Apple (95 kcal)', 'Pineapple (105 kcal)', 'Watermelon (62 kcal)', 'melon (82 kcal)', 'Oranges (62 kcal)']
     assert result == expected
 
 def test_get_food_name_and_calorie_empty():
@@ -91,18 +91,21 @@ def test_prepare_nutrients():
     assert 'Other Nutrients' in major_nutrients
 
 def test_filter_foods_by_nutrient_valid_range():
+    df = get_data('Food_Nutrition_Dataset.csv')
     food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 50, 100)
     
     assert 'cream cheese' in food_list                                                          #Expected food found in valid range
     assert "Foods in range for Caloric Value" in message
 
 def test_filter_foods_by_nutrient_no_foods_in_range():
+    df = get_data('Food_Nutrition_Dataset.csv')
     food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 4000, 5000)
     
     assert food_list == []                                                                      #Should not return any foods for invalid range
     assert "No foods found for Caloric Value" in message
 
 def test_filter_foods_by_nutrient_invalid_nutrient():
+    df = get_data('Food_Nutrition_Dataset.csv')
     food_list, message = filter_foods_by_nutrient(df, '', 50, 100)
     
     assert food_list == []                                                                     #Should not return any foods for unknown nutrient

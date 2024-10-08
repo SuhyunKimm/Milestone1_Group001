@@ -69,7 +69,7 @@ class PanelNutritionBreakdown(NutritionBreakdownPanel):
         self.NB_chart_panel.DestroyChildren()
         self.NB_caloric_value_text.SetLabel('')
         self.NB_nutrition_density_text.SetLabel('')
-        self.NB_search_text.SetLabel('')
+        self.NB_search_text.SetValue('')
         self.NB_result_text.SetLabel('')
 
     def go_to_main(self, event):
