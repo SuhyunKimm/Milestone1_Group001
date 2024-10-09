@@ -13,11 +13,15 @@ the five required features.</span> There is no need to test the GUI components. 
 list all tested functions related to the five required features and the corresponding test functions designed to test 
 those functions, for example:
 
-| **Tested Functions** | **Test Functions**                               |
-|----------------------|--------------------------------------------------|
-| `get_data(path)`     | `test_get_data_valid()` <br> `test_get_data_invalid()`     |
-| `search_food_by_name(df, name)`| `test_search_food_by_name_valid()` <br> `test_search_food_by_name_no_match()` <br>  `test_search_food_by_name_case_insensitivity` <br> `test_get_food_name_and_calorie_valid`|
-| `get_food_name_and_calorie(df)`  | `test_get_food_name_and_calorie_empty()`                                            |
+| **Tested Functions** | **Test Functions**                                                                                                                                                                                          |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `get_data(path)` | `test_get_data_valid()` <br> `test_get_data_invalid()`                                                                                                                                                      |
+| `search_food_by_name(df, name)`| `test_search_food_by_name_valid()` <br> `test_search_food_by_name_no_match()` <br>  `test_search_food_by_name_case_insensitivity` <br> `test_get_food_name_and_calorie_valid`                               |
+| `get_food_name_and_calorie(df)` | `test_get_food_name_and_calorie_empty()`                                                                                                                                                                    
+ `categorize_nutrition(value, max_value)` | `test_categorize_nutrition_low()` <br> `test_categorize_nutrition_mid()` br `test_categorize_nutrition_high()`br `test_categorize_nutrition_missing_value()`br `test_categorize_nutrition_zero_max_value()` |<br/>
+| `nutrition_level_filter(df)` | `test_nutrition_level_filter_basic` <br> `test_nutrition_level_filter_with_zero_values()` <br> `test_nutrition_level_filter_non_numeric_columns()` br `test_nutrition_level_filter_all_zero_values()` br `test_nutrition_level_filter_empty_dataframe()` r `test_nutrition_level_filter_mixed_data_types()` 
+| `filter_by_nutrition_and_level` |`test_filter_by_nutrition_and_level_valid()` <br> `test_filter_by_nutrition_and_level_invalid_nutrition_type()` <br> `test_filter_by_nutrition_and_level_no_matching_level()` br `test_filter_by_nutrition_and_level_empty_dataframe()` br `test_filter_by_nutrition_and_level_multiple_matching_rows()` br `test_filter_by_nutrition_and_level_non_categorical_nutrition()`                                                                                                                                                                   
+|
 
 ---
 
@@ -192,25 +196,43 @@ def test_get_food_name_and_calorie_empty():
 
 ### Test Case 4:
 - **Test Function/Module**
-  - `test_divide_valid()`
-  - `test_divide_invalid()`
+  - `test_categorize_nutrition_low()` 
+  - `test_categorize_nutrition_mid()` 
+  - `test_categorize_nutrition_high()`
+  - `test_categorize_nutrition_missing_value()`
+  - `test_categorize_nutrition_zero_max_value()`
+ 
 - **Tested Function/Module**
-  - `divide(a, b)`
+  - `categorize_nutrition(value, max_value)`
 - **Description**
-  - A brief description of the tested function's usage, including its purpose, input, and output.
+  - A testing function to ensure that that the `categorize_nutrition(value, max_value)` successfully take in a value and a max value and categorise the value into mid, low or high
 - **1) Valid Input and Expected Output**  
 
-| **Valid Input**               | **Expected Output** |
-|-------------------------------|---------------------|
-| `divide(10, 2)`               | `5`                 |
-| `divide(10, -2)`              | `-5`                |
-| `add more cases in necessary` | `...`               |
+| **Valid Input**                  | **Expected Output** |
+|----------------------------------|---------------------|
+| `categorize_nutrition(5, 30)`    | `low`               |
+| `categorize_nutrition(15, 30)`   | `mid`               |
+| `categorize_nutrition(25, 30)`   | `high`              |
+| `categorize_nutrition( nan, 30)` | `unknow`            |
+| `categorize_nutrition(0, 0)`     | `high`              |
 
 - **1) Code for the Test Function**
 ```python
-def test_divide_valid():
-    assert divide(10, 2) == 5
-    assert divide(10, -2) == -5
+def test_categorize_nutrition_low():
+    assert categorize_nutrition(5, 30) == 'low'
+
+def test_categorize_nutrition_mid():
+    assert categorize_nutrition(15, 30) == 'mid'
+
+def test_categorize_nutrition_high():
+    assert categorize_nutrition(25, 30) == 'high'
+
+def test_categorize_nutrition_missing_value():
+    assert categorize_nutrition(float('nan'), 30) == 'unknown'
+
+def test_categorize_nutrition_zero_max_value():
+    assert categorize_nutrition(0, 0) == 'high'  # Edge case handling
+
 ```
 - **2) Invalid Input and Expected Output**
 
