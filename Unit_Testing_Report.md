@@ -192,12 +192,11 @@ def test_get_food_name_and_calorie_empty():
 
 ### Test Case 4:
 - **Test Function/Module**
-  - `test_divide_valid()`
-  - `test_divide_invalid()`
+  - `test_extract_nutrient_info`
 - **Tested Function/Module**
-  - `divide(a, b)`
+  - `extract_nutrient_info(result)`
 - **Description**
-  - A brief description of the tested function's usage, including its purpose, input, and output.
+  - This testing function ensures the `extract_nutrient_info(result)` function successfully extract all the nutrients infomation from the dataset, based on the name of food.
 - **1) Valid Input and Expected Output**  
 
 | **Valid Input**               | **Expected Output** |
