@@ -145,7 +145,7 @@ def test_categorize_nutrition_low():
     assert categorize_nutrition(5, 30) == 'low'
 
 def test_categorize_nutrition_mid():
-    assert categorize_nutrition(20, 30) == 'mid'
+    assert categorize_nutrition(15, 30) == 'mid'
 
 def test_categorize_nutrition_high():
     assert categorize_nutrition(25, 30) == 'high'
