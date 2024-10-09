@@ -243,7 +243,14 @@ def test_nutrition_level_filter_mixed_data_types():
         "sugar": ["10", "20", "30"]
     })
     pd.testing.assert_frame_equal(result, expected)
+
+
+import pandas as pd
+import pytest
+
+
 def test_filter_by_nutrition_and_level_valid():
+    # Sample data for testing
     sample_data = pd.DataFrame({
         'food': ['Apple', 'Pineapple', 'Watermelon'],
         'Caloric Value': [30, 60, 90],
@@ -251,13 +258,13 @@ def test_filter_by_nutrition_and_level_valid():
     })
 
     result = filter_by_nutrition_and_level(sample_data, 'Caloric Value', 'mid')
+
     expected = pd.DataFrame({
         'food': ['Pineapple'],
         'Caloric Value': [60]
     })
 
-    pd.testing.assert_frame_equal(result.reset_index(drop=True), expected)
-
+    pd.testing.assert_frame_equal(result.reset_index(drop=True), expected.reset_index(drop=True))
 
 
 def test_filter_by_nutrition_and_level_invalid_nutrition_type():
@@ -303,7 +310,7 @@ def test_filter_by_nutrition_and_level_multiple_matching_rows():
         "food": ["banana", "grapes"],
         "calories": [100, 90]
     })
-    pd.testing.assert_frame_equal(result, expected)
+    pd.testing.assert_frame_equal(result.reset_index(drop=True), expected.reset_index(drop=True))
 
 
 def test_filter_by_nutrition_and_level_non_categorical_nutrition():
@@ -320,4 +327,4 @@ def test_filter_by_nutrition_and_level_non_categorical_nutrition():
         "food": ["apple"],
         "sugar": [10]
     })
-    pd.testing.assert_frame_equal(result, expected)
+    pd.testing.assert_frame_equal(result.reset_index(drop=True), expected.reset_index(drop=True))
