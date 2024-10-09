@@ -30,11 +30,10 @@ def prepare_nutrients(nutrients):
     other_nutrients_value = 0
 
     for name, value in nutrients.items():
-        if pd.notna(value):
-            if value >= 1:
-                major_nutrients[name] = value
-            else:
-                other_nutrients_value += value
+        if value >= 1:
+            major_nutrients[name] = value
+        else:
+            other_nutrients_value += value
 
     if other_nutrients_value > 0:
         major_nutrients['Other Nutrients'] = other_nutrients_value
