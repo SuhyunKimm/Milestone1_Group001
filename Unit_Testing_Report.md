@@ -205,8 +205,7 @@ def test_get_food_name_and_calorie_empty():
 - **Tested Function/Module**
   - `categorize_nutrition(value, max_value)`
 - **Description**
-  - A testing function to ensure that that the `categorize_nutrition(value, max_value)` successfully take in a value and a max value and categorise the value into mid, low or high
->>>>>>> 858bc110dae5ee62aa4ce603650aeaa6f375d2ca
+  - A testing function to ensure that that the `categorize_nutrition(value, max_value)` successfully take in a value and a max value and categorise the value into mid, low or high.
 - **1) Valid Input and Expected Output**  
 
 | **Valid Input**                  | **Expected Output** |
@@ -482,6 +481,130 @@ def test_filter_by_nutrition_and_level_empty_dataframe():
     result = filter_by_nutrition_and_level(df, "calories", "low")
 
     assert result == "No foods found with calories at low level."
+
+```
+
+### Test Case 7:
+- **Test Function/Module**
+  - `test_extract_nutrient_info`
+- **Tested Function/Module**
+  - `extract_nutrient_info(result)`
+- **Description**
+  - This testing function ensures the `extract_nutrient_info(result)` function successfully extracts all the nutrient infomation from the dataset, based on the name of food.
+- **1) Valid Input and Expected Output**
+
+| **Valid Input**               | **Expected Output** |
+|-------------------------------|---------------------|
+| `extract_nutrient_info(sample data)`| `{'Caloric Value': 52, 'Fat': 0.2, 'Sugar': 10.0}`|
+
+
+- **1) Code for the Test Function**
+```python
+def test_extract_nutrient_info():
+    sample_data = pd.Series({
+        'food': 'Apple',
+        'Caloric Value': 52,
+        'Fat': 0.2,
+        'Sugar': 10.0,
+        'Protein': 0.3
+    })
+    nutrient_info = extract_nutrient_info(sample_data)
+    expected_nutrients = {
+        'Fat': 0.2,
+        'Sugar': 10.0,
+        'Protein': 0.3
+    }
+    assert nutrient_info == expected_nutrients
+
+```
+
+### Test Case 8:
+- **Test Function/Module**
+  - `test_prepare_nutrients()`
+- **Tested Function/Module**
+  - `divide(a, b)`
+- **Description**
+  - This test function ensures that the prepare_nutrients(nutrients) function correctly processes the nutrient data to separate major nutrients (those with values 1 or higher) from other nutrients (those with values less than 1). The function should return a dictionary containing only the major nutrients.
+- **1) Valid Input and Expected Output**
+
+| **Valid Input**               | **Expected Output** |
+|-------------------------------|---------------------|
+| `prepare_nutrients({'Protein': 1.5, 'Carbs': 0.5, 'Fat': 0.0, 'Sugars': 0.8})`| `{'Protein', 'Other Nutrients'}`|
+
+- **1) Code for the Test Function**
+```python
+def test_prepare_nutrients():
+    nutrients = {'Protein': 1.5, 'Carbs': 0.5, 'Fat': 0.0, 'Sugars': 0.8}
+    major_nutrients = prepare_nutrients(nutrients)
+    assert 'Protein' in major_nutrients
+    assert 'Carbs' not in major_nutrients
+    assert 'Sugars' not in major_nutrients
+    assert 'Other Nutrients' in major_nutrients
+```
+
+### Test Case 9:
+- **Test Function/Module**
+  - `test_filter_foods_by_nutrient_valid_range()`
+  - `test_filter_foods_by_nutrient_no_foods_in_range()`
+  - `test_filter_foods_by_nutrient_invalid_nutrient()`
+- **Tested Function/Module**
+  - `filter_foods_by_nutrient(df, RF_nutrient_name, RF_min_value, RF_max_value)`
+- **Description**
+  - This test function verifies that the filter_foods_by_nutrient function correctly filters the food dataset based on a specified nutrient range. It checks whether foods within the given range are returned successfully.
+- **1) Valid Input and Expected Output**
+
+| **Valid Input**               | **Expected Output** |
+|-------------------------------|---------------------|
+| `filter_foods_by_nutrient(df, 'Caloric Value', 60, 70)`| `(['honey'], "Foods in range for Caloric Value.")`|
+
+- **1) Code for the Test Function**
+```python
+def test_filter_foods_by_nutrient_valid_range():
+    df = get_data('Food_Nutrition_Dataset.csv')
+    sample_data = pd.DataFrame({
+        'food': ['camembert cheese', 'goat cheese', 'brie cheese', 'goat cheese soft', 'honey'],
+        'Caloric Value': [90, 103, 100, 75, 64]
+    })
+    
+    food_list, message = filter_foods_by_nutrient(sample_data, 'Caloric Value', 60, 70)
+
+    assert 'honey' in food_list  # Check if 'honey' is in the filtered list
+    assert "Foods in range for Caloric Value" in message  # Verify the message
+```
+- **2) Invalid Input and Expected Output**
+
+| **Invalid Input**             | **Expected Output** |
+|-------------------------------|---------------------|
+| `filter_foods_by_nutrient(df, 'Caloric Value', 4000, 5000)`| `([], "No foods found for Caloric Value in the selected range.")`  |
+| `filter_foods_by_nutrient(df, '', 50, 100)` | `([], "Nutrient '' not found.")`|
+
+- **2) Code for the Test Function**
+```python
+def test_filter_foods_by_nutrient_no_foods_in_range():
+    df = get_data('Food_Nutrition_Dataset.csv')
+    sample_data = pd.DataFrame({
+        'food': ['camembert cheese', 'goat cheese', 'brie cheese', 'goat cheese soft', 'honey'],
+        'Caloric Value': [90, 103, 100, 75, 64]
+    })
+    
+    food_list, message = filter_foods_by_nutrient(sample_data, 'Caloric Value', 4000, 5000)
+
+    assert food_list == []  # Check if the returned list is empty
+    assert "No foods found for Caloric Value" in message  # Verify the message
+
+```
+```
+def test_filter_foods_by_nutrient_invalid_nutrient():
+    df = get_data('Food_Nutrition_Dataset.csv')
+    sample_data = pd.DataFrame({
+        'food': ['camembert cheese', 'goat cheese', 'brie cheese', 'goat cheese soft', 'honey'],
+        'Caloric Value': [90, 103, 100, 75, 64]
+    })
+    
+    food_list, message = filter_foods_by_nutrient(sample_data, '', 50, 100)
+    
+    assert food_list == []  # Check if the returned list is empty
+    assert "Nutrient '' not found" in message  # Verify the message
 
 ```
 
