@@ -35,6 +35,8 @@ def prepare_nutrients(nutrients):
         else:
             other_nutrients_value += value
 
+    major_nutrients['Other Nutrients'] = other_nutrients_value
+    
     return major_nutrients
 
 
@@ -92,4 +94,3 @@ def filter_foods_by_nutrient(df, RF_nutrient_name, RF_min_value, RF_max_value):
             return [], f"No foods found for {RF_nutrient_name} in the selected range."
     else:
         return [], f"Nutrient '{RF_nutrient_name}' not found."
-

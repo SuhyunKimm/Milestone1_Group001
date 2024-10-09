@@ -485,14 +485,6 @@ def test_filter_by_nutrition_and_level_empty_dataframe():
 ```
 
 ## 3. **Testing Report Summary**
-Include a screenshot of unit_test.html showing the results of all the above tests. 
 
-You can use the following command to run the unit tests and generate the unit_test.html report.
 
-```commandline
-pytest test_all_functions.py --html=unit_test.html --self-contained-html
-```
-Note: test_all_functions.py should contain all the test functions designed to test the self-defined functions related 
-to the five required features.
-
-![unit_test_summary](./Unit_test.png)
+![unit_test_summary](./Unit_Testing_Result.png)
