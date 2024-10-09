@@ -106,35 +106,40 @@ def test_prepare_nutrients():
     assert 'Sugars' not in major_nutrients
     assert 'Other Nutrients' in major_nutrients
 
+
 def test_filter_foods_by_nutrient_valid_range():
+    df = get_data('Food_Nutrition_Dataset.csv')
     sample_data = pd.DataFrame({
-        'food': ['Apple', 'Pineapple', 'Watermelon', 'melon', 'Oranges'],
-        'Caloric Value': [95, 105, 107, 82, 62]
+        'food': ['camembert cheese', 'goat cheese', 'brie cheese', 'goat cheese soft', 'honey'],
+        'Caloric Value': [90, 103, 100, 75, 64]
     })
     food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 60, 70)
-    
-    assert 'Oranges' in food_list
+
+    assert 'honey' in food_list
     assert "Foods in range for Caloric Value" in message
 
+
 def test_filter_foods_by_nutrient_no_foods_in_range():
+    df = get_data('Food_Nutrition_Dataset.csv')
     sample_data = pd.DataFrame({
-        'food': ['Apple', 'Pineapple', 'Watermelon', 'melon', 'Oranges'],
-        'Caloric Value': [95, 105, 107, 82, 62]
+        'food': ['camembert cheese', 'goat cheese', 'brie cheese', 'goat cheese soft', 'honey'],
+        'Caloric Value': [90, 103, 100, 75, 64]
     })
     food_list, message = filter_foods_by_nutrient(df, 'Caloric Value', 4000, 5000)
-    
+
     assert food_list == []
     assert "No foods found for Caloric Value" in message
 
+
 def test_filter_foods_by_nutrient_invalid_nutrient():
+    df = get_data('Food_Nutrition_Dataset.csv')
     sample_data = pd.DataFrame({
-        'food': ['Apple', 'Pineapple', 'Watermelon', 'melon', 'Oranges'],
-        'Caloric Value': [95, 105, 107, 82, 62]
+        'food': ['camembert cheese', 'goat cheese', 'brie cheese', 'goat cheese soft', 'honey'],
+        'Caloric Value': [90, 103, 100, 75, 64]
     })
     food_list, message = filter_foods_by_nutrient(df, '', 50, 100)
     assert food_list == []
     assert "Nutrient '' not found" in message
-
 
 def test_categorize_nutrition_low():
     assert categorize_nutrition(5, 30) == 'low'
