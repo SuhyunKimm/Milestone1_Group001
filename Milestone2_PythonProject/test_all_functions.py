@@ -134,3 +134,81 @@ def test_filter_foods_by_nutrient_invalid_nutrient():
     food_list, message = filter_foods_by_nutrient(df, '', 50, 100)
     assert food_list == []
     assert "Nutrient '' not found" in message
+
+
+def test_categorize_nutrition_low():
+    assert categorize_nutrition(10, 30) == 'low'
+
+def test_categorize_nutrition_mid():
+    assert categorize_nutrition(20, 30) == 'mid'
+
+def test_categorize_nutrition_high():
+    assert categorize_nutrition(25, 30) == 'high'
+
+def test_categorize_nutrition_missing_value():
+    assert categorize_nutrition(float('nan'), 30) == 'unknown'
+
+def test_categorize_nutrition_zero_max_value():
+    assert categorize_nutrition(0, 0) == 'high'  # Edge case handling
+
+
+
+def test_nutrition_level_filter():
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon'],
+        'Caloric Value': [30, 60, 90],
+        'Protein': [2, 5, 8]
+    })
+
+    result = nutrition_level_filter(sample_data)
+
+    expected = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon'],
+        'Caloric Value': ['low', 'mid', 'high'],
+        'Protein': ['low', 'mid', 'high']
+    })
+
+    pd.testing.assert_frame_equal(result, expected)
+
+
+def test_filter_by_nutrition_and_level_valid():
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon'],
+        'Caloric Value': [30, 60, 90],
+        'Protein': [2, 5, 8]
+    })
+
+    result = filter_by_nutrition_and_level(sample_data, 'Caloric Value', 'mid')
+    expected = pd.DataFrame({
+        'food': ['Pineapple'],
+        'Caloric Value': [60]
+    })
+
+    pd.testing.assert_frame_equal(result.reset_index(drop=True), expected)
+
+
+def test_filter_by_nutrition_and_level_no_match():
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon'],
+        'Caloric Value': [30, 60, 90],
+        'Protein': [2, 5, 8]
+    })
+
+    result = filter_by_nutrition_and_level(sample_data, 'Caloric Value', 'low')
+    expected = pd.DataFrame({
+        'food': ['Apple'],
+        'Caloric Value': [30]
+    })
+
+    pd.testing.assert_frame_equal(result.reset_index(drop=True), expected)
+
+
+def test_filter_by_nutrition_and_level_invalid_nutrition_type():
+    sample_data = pd.DataFrame({
+        'food': ['Apple', 'Pineapple', 'Watermelon'],
+        'Caloric Value': [30, 60, 90],
+        'Protein': [2, 5, 8]
+    })
+
+    result = filter_by_nutrition_and_level(sample_data, 'Fiber', 'mid')
+    assert result == "Invalid nutrition type."
