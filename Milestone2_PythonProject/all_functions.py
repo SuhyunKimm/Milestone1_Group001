@@ -35,9 +35,6 @@ def prepare_nutrients(nutrients):
         else:
             other_nutrients_value += value
 
-    if other_nutrients_value > 0:
-        major_nutrients['Other Nutrients'] = other_nutrients_value
-
     return major_nutrients
 
 
