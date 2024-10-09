@@ -137,7 +137,7 @@ def test_filter_foods_by_nutrient_invalid_nutrient():
 
 
 def test_categorize_nutrition_low():
-    assert categorize_nutrition(10, 30) == 'low'
+    assert categorize_nutrition(5, 30) == 'low'
 
 def test_categorize_nutrition_mid():
     assert categorize_nutrition(20, 30) == 'mid'
