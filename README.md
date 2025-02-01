@@ -4,11 +4,10 @@
 
 ---
 
-You should use your software to prepare an executive summary as outlined below for the five required features.
 
 ## 1. Food Search
 ### Description  
-Briefly describe what this feature does.
+The Food Search feature enables users to search food item from the data and displays the results.
 
 ### Steps
 1. Select 'Food search' from the main page
