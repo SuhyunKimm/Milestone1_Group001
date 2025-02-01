@@ -17,7 +17,7 @@ The Food Search feature enables users to search food item from the data and disp
 
 ### Screenshots
 Include screenshots for each step demonstrating the use of this feature.  
-![1](./Food_search_screen.png)
+![1](./Food_Search_screen.png)
 
 
 
