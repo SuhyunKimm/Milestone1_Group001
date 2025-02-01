@@ -1,6 +1,5 @@
 # Executive Summary
 
-Please provide your GitHub repository link.
 ### GitHub Repository URL: https://github.com/SuhyunKimm/Milestone1_Group001
 
 ---
